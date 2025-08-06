@@ -15,36 +15,6 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// Custom Cursor
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
-
-if (window.innerWidth > 968) {
-    document.addEventListener('mousemove', (e) => {
-        requestAnimationFrame(() => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            setTimeout(() => {
-                cursorFollower.style.left = e.clientX - 20 + 'px';
-                cursorFollower.style.top = e.clientY - 20 + 'px';
-            }, 100);
-        });
-    });
-
-    // Cursor hover effect
-    const links = document.querySelectorAll('a, button');
-    links.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover');
-            cursorFollower.style.transform = 'scale(2)';
-        });
-        link.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover');
-            cursorFollower.style.transform = 'scale(1)';
-        });
-    });
 } else {
     cursor.style.display = 'none';
     cursorFollower.style.display = 'none';
