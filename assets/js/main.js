@@ -50,16 +50,6 @@ if (window.innerWidth > 968) {
     cursorFollower.style.display = 'none';
 }
 
-// Loading Screen
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loader = document.querySelector('.loader');
-        loader.style.opacity = '0';
-        loader.style.visibility = 'hidden';
-        document.body.style.overflow = 'visible';
-    }, 1500);
-});
-
 // Navigation Scroll Effect
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
@@ -260,12 +250,3 @@ function updateAnimations() {
 }
 
 window.addEventListener('scroll', requestTick, { passive: true });
-
-// Performance monitoring
-if ('performance' in window) {
-    window.addEventListener('load', () => {
-        const perfData = window.performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`Page load time: ${pageLoadTime}ms`);
-    });
-}
