@@ -1,0 +1,41 @@
+# Robots.txt for PontoHub
+# https://www.pontohub.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /*.pdf$
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemaps
+Sitemap: https://www.pontohub.com/sitemap.xml
+Sitemap: https://www.pontohub.com/sitemap-pt-br.xml
+Sitemap: https://www.pontohub.com/sitemap-pt-pt.xml
+Sitemap: https://www.pontohub.com/sitemap-en-gb.xml

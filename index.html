@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PontoHub - Redirecionando...</title>
+    <meta http-equiv="refresh" content="0; url=/pt-br/">
+    <script type="text/javascript">
+        // Detecta o idioma do navegador e redireciona
+        const browserLang = navigator.language || navigator.userLanguage;
+        let targetLang = 'pt-br'; // default
+        
+        if (browserLang.startsWith('pt-BR')) {
+            targetLang = 'pt-br';
+        } else if (browserLang.startsWith('pt')) {
+            targetLang = 'pt-pt';
+        } else if (browserLang.startsWith('en')) {
+            targetLang = 'en-gb';
+        }
+        
+        // Verifica se já tem uma preferência salva
+        const savedLang = localStorage.getItem('pontohub_language');
+        if (savedLang) {
+            targetLang = savedLang.toLowerCase();
+        }
+        
+        window.location.replace('/' + targetLang + '/');
+    </script>
+</head>
+<body>
+    <p>Redirecionando para a versão em português...</p>
+    <p>If you are not redirected, <a href="/pt-br/">click here</a>.</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Editores
+.vscode/
+.idea/
+
+# Dependências (se houver no futuro)
+node_modules/
+
+# Arquivos temporários
+*.tmp
+*.temp
+.cache/
+
+# Arquivos pessoais/senhas
+.env
+config.local.js
