@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Página Inicial -->
+    <url>
+        <loc>https://www.pontohub.com/pt-br/</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/"/>
+        <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/"/>
+        <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pontohub.com/pt-br/"/>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Serviços -->
+    <url>
+        <loc>https://www.pontohub.com/pt-br/servicos</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/servicos"/>
+        <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/servicos"/>
+        <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/services"/>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Sobre -->
+    <url>
+        <loc>https://www.pontohub.com/pt-br/sobre</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/sobre"/>
+        <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/sobre"/>
+        <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/about"/>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Parceiros -->
+    <url>
+        <loc>https://www.pontohub.com/pt-br/parceiros</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/parceiros"/>
+        <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/parceiros"/>
+        <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/partners"/>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Portfolio -->
+    <url>
+        <loc>https://www.pontohub.com/pt-br/portfolio</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/portfolio"/>
+        <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/portfolio"/>
+        <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/portfolio"/>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Contato -->
+    <url>
+        <loc>https://www.pontohub.com/pt-br/contato</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/contato"/>
+        <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/contacto"/>
+        <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/contact"/>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Política de Privacidade -->
+    <url>
+        <loc>https://www.pontohub.com/pt-br/politica-privacidade</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/politica-privacidade"/>
+        <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/politica-privacidade"/>
+        <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/privacy-policy"/>
+        <lastmod>2024-11-14</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Termos e Condições -->
+    <url>
+        <loc>https://www.pontohub.com/pt-br/termos-condicoes</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/termos-condicoes"/>
+        <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/termos-condicoes"/>
+        <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/terms-conditions"/>
+        <lastmod>2024-11-14</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Política de Cookies -->
+    <url>
+        <loc>https://www.pontohub.com/pt-br/politica-cookies</loc>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/politica-cookies"/>
+        <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/politica-cookies"/>
+        <xhtml:link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/cookies-policy"/>
+        <lastmod>2024-11-14</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+</urlset>

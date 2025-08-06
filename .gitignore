@@ -20,3 +20,8 @@ node_modules/
 # Arquivos pessoais/senhas
 .env
 config.local.js
+
+# Arquivos locais que NÃO vão pro Cloudflare
+.htaccess
+.htaccess.local
+*.local

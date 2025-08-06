@@ -1,0 +1,9 @@
+# _redirects - Arquivo do Cloudflare Pages
+
+# Redirecionamentos de idioma baseados no header Accept-Language
+/  /pt-pt/  302  Language=pt-PT
+/  /en-gb/  302  Language=en
+/  /pt-br/  302
+
+# Redirecionamentos de URLs antigas (se tiver)
+# /old-page  /new-page  301

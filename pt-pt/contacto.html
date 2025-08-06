@@ -62,14 +62,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+     <!-- Preload de recursos críticos -->
+    <link rel="preload" href="/assets/css/global.css" as="style">
+    <link rel="preload" href="/assets/images/pontohub-logo.svg" as="image">
+
+    <!-- DNS Prefetch para recursos futuros -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
     <!-- Fonts with display swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
-    <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#0B4387">
-    <link rel="manifest" href="/manifest.json">
     
     <!-- CSS com caminhos corretos -->
     <link rel="stylesheet" href="../assets/css/global.css">

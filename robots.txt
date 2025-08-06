@@ -1,30 +1,66 @@
-# Robots.txt for PontoHub
-# https://www.pontohub.com
+# Robots.txt para PontoHub
+# Site multi-idiomas: PT-BR, PT-PT, EN-GB
 
-# Allow all crawlers
+# Regras gerais para todos os bots
 User-agent: *
 Allow: /
-Disallow: /assets/js/
-Disallow: /assets/css/
-Disallow: /*.pdf$
-Disallow: /admin/
-Disallow: /private/
-Disallow: /.git/
 
-# Specific rules for Google
+# Diretórios permitidos
+Allow: /pt-br/
+Allow: /pt-pt/
+Allow: /en-gb/
+Allow: /assets/images/
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Evitar indexação de arquivos de desenvolvimento
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /.idea/
+Disallow: /node_modules/
+Disallow: *.log
+Disallow: *.tmp
+Disallow: *.temp
+Disallow: .env
+Disallow: .htaccess
+Disallow: .gitignore
+
+# Crawl delay para evitar sobrecarga
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://www.pontohub.com/sitemap-index.xml
+Sitemap: https://www.pontohub.com/sitemap.xml
+Sitemap: https://www.pontohub.com/sitemap-pt-br.xml
+Sitemap: https://www.pontohub.com/sitemap-pt-pt.xml
+Sitemap: https://www.pontohub.com/sitemap-en-gb.xml
+Sitemap: https://www.pontohub.com/sitemap-legal.xml
+
+# Regras específicas para Google
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
-# Specific rules for Bing
+# Regras específicas para Bing
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# Block bad bots
-User-agent: MJ12bot
-Disallow: /
+# Regras para Google Images
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.png
+Allow: *.svg
+Allow: *.webp
 
+# Regras para Google Mobile
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bloquear bots indesejados
 User-agent: AhrefsBot
 Disallow: /
 
@@ -34,8 +70,8 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-# Sitemaps
-Sitemap: https://www.pontohub.com/sitemap.xml
-Sitemap: https://www.pontohub.com/sitemap-pt-br.xml
-Sitemap: https://www.pontohub.com/sitemap-pt-pt.xml
-Sitemap: https://www.pontohub.com/sitemap-en-gb.xml
+User-agent: MJ12bot
+Disallow: /
+
+# Host preferencial
+Host: https://www.pontohub.com

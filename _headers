@@ -1,0 +1,31 @@
+# _headers - Headers de segurança e performance
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Cache para assets estáticos
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache para HTMLs
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Cache para CSS e JS
+/*.css
+  Cache-Control: public, max-age=604800
+
+/*.js
+  Cache-Control: public, max-age=604800
+
+# Fontes
+/*.woff2
+  Cache-Control: public, max-age=31536000
+  Access-Control-Allow-Origin: *

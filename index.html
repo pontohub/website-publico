@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>PontoHub - Redirecionando...</title>
-    <meta http-equiv="refresh" content="0; url=/pt-br/">
+    <meta http-equiv="refresh" content="3; url=/pt-br/">
     <script type="text/javascript">
         // Detecta o idioma do navegador e redireciona
         const browserLang = navigator.language || navigator.userLanguage;
         let targetLang = 'pt-br'; // default
         
-        if (browserLang.startsWith('pt-BR')) {
-            targetLang = 'pt-br';
-        } else if (browserLang.startsWith('pt')) {
+        if (browserLang.startsWith('pt-PT')) {
             targetLang = 'pt-pt';
         } else if (browserLang.startsWith('en')) {
             targetLang = 'en-gb';
+        } else if (browserLang.startsWith('pt')) {
+            targetLang = 'pt-br';
         }
         
-        // Verifica se já tem uma preferência salva
-        const savedLang = localStorage.getItem('pontohub_language');
-        if (savedLang) {
-            targetLang = savedLang.toLowerCase();
-        }
+        // REMOVIDO localStorage - não usar!
         
         window.location.replace('/' + targetLang + '/');
     </script>
 </head>
 <body>
-    <p>Redirecionando para a versão em português...</p>
-    <p>If you are not redirected, <a href="/pt-br/">click here</a>.</p>
+    <p>Redirecionando... | Redirecting...</p>
+    <p>
+        <a href="/pt-br/">Português Brasil</a> | 
+        <a href="/pt-pt/">Português Portugal</a> | 
+        <a href="/en-gb/">English</a>
+    </p>
 </body>
 </html>
