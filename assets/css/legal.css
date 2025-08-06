@@ -1,0 +1,333 @@
+/* =========================================
+   LEGAL PAGES - Políticas e Termos
+   ========================================= */
+
+/* Garantir que o navbar fique sempre visível */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section Legal */
+.legal-hero {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary) 100%);
+    padding: 180px 0 60px; /* Aumentado o padding-top para dar espaço ao menu */
+    margin-top: 80px; /* Adiciona margem para não ficar atrás do navbar */
+    position: relative;
+    overflow: hidden;
+}
+
+.legal-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+}
+
+.legal-hero .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.legal-hero .hero-content {
+    text-align: center;
+    color: white;
+}
+
+.legal-hero .hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.legal-hero .hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/* Content Section */
+.legal-content {
+    padding: 80px 0;
+    background: var(--gray-50);
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+}
+
+.content-wrapper {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+.section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--gray-700);
+    margin-bottom: 16px;
+}
+
+.section p:last-child {
+    margin-bottom: 0;
+}
+
+.section ul {
+    margin: 20px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.section ul li {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 12px;
+    line-height: 1.8;
+    color: var(--gray-700);
+}
+
+.section ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.section ul li strong {
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+.section a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.section a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Sidebar */
+.legal-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.sidebar-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.sidebar-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gray-600);
+    margin-bottom: 16px;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-links li {
+    margin-bottom: 12px;
+}
+
+.sidebar-links li:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.sidebar-links a:hover {
+    color: var(--primary);
+    transform: translateX(4px);
+}
+
+.sidebar-links a::before {
+    content: '→';
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+.sidebar-cta {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.sidebar-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(11, 67, 135, 0.3);
+}
+
+/* Table of Contents (optional) */
+.toc {
+    background: var(--gray-50);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 40px;
+}
+
+.toc h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 16px;
+}
+
+.toc ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.toc li {
+    margin-bottom: 8px;
+    color: var(--gray-700);
+}
+
+.toc a {
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.toc a:hover {
+    color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .legal-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .legal-hero {
+        padding: 140px 0 40px; /* Ajustado para mobile */
+        margin-top: 70px; /* Margem menor em mobile */
+    }
+    
+    .legal-content {
+        padding: 40px 0;
+    }
+    
+    .content-wrapper {
+        padding: 24px;
+    }
+    
+    .section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .legal-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-hero .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .content-wrapper {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    .section {
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+    }
+    
+    .section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .section p,
+    .section ul li {
+        font-size: 0.95rem;
+    }
+}

@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Consent Mode do Google  -->
+    <script>
+        // Configuração de consentimento padrão
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Define consentimento padrão como negado
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'functionality_storage': 'denied',
+            'personalization_storage': 'denied',
+            'security_storage': 'granted'
+        });
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -58,6 +74,8 @@
     <!-- CSS com caminhos corretos -->
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/contato.css">
+    <link rel="stylesheet" href="/assets/css/cookie-banner.css">
+
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -347,34 +365,8 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="/pt-pt/" class="footer-logo">
-                        <div class="logo-wrapper">
-                            <div class="logo-shape"></div>
-                            <div class="logo-inner">P</div>
-                        </div>
-                        <span class="logo-text">PontoHub</span>
-                    </a>
-                    <p class="footer-description" data-i18n="footer.description">
-                        A transformar o futuro através da tecnologia. Desenvolvimento 
-                        de software, IA, cloud computing e análise de dados para 
-                        empresas que querem liderar.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </div>
-                </div>
+                
+                <!-- Coluna 1: Serviços -->
                 <div class="footer-column">
                     <h4 data-i18n="footer.services">Serviços</h4>
                     <ul class="footer-links">
@@ -392,6 +384,8 @@
                         </a></li>
                     </ul>
                 </div>
+                
+                <!-- Coluna 2: Empresa -->
                 <div class="footer-column">
                     <h4 data-i18n="footer.company">Empresa</h4>
                     <ul class="footer-links">
@@ -399,34 +393,206 @@
                             <i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">Sobre Nós</span>
                         </a></li>
                         <li><a href="/pt-pt/sobre.html#team" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> <span data-i18n="team.label">A Nossa Equipa</span>
+                            <i class="fas fa-chevron-right"></i> <span data-i18n="team.label">Nossa Equipe</span>
                         </a></li>
                         <li><a href="/pt-pt/portfolio.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> <span data-i18n="nav.portfolio">Portfólio</span>
+                            <i class="fas fa-chevron-right"></i> <span data-i18n="nav.portfolio">Portfolio</span>
                         </a></li>
                         <li><a href="/pt-pt/parceiros.html" class="footer-link">
                             <i class="fas fa-chevron-right"></i> <span data-i18n="nav.partners">Parceiros</span>
                         </a></li>
                     </ul>
                 </div>
+                
+                <!-- Coluna 3: Legal -->
                 <div class="footer-column">
-                    <h4 data-i18n="footer.newsletter">Newsletter</h4>
-                    <div class="newsletter-box">
-                        <p data-i18n="footer.newsletter.text">Receba insights sobre tecnologia e inovação.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="O seu email" class="newsletter-input" required>
-                            <button type="submit" class="newsletter-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </form>
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/pt-pt/politica-privacidade.html" class="footer-link">
+                            <i class="fas fa-chevron-right"></i> Política de Privacidade
+                        </a></li>
+                        <li><a href="/pt-pt/termos-condicoes.html" class="footer-link">
+                            <i class="fas fa-chevron-right"></i> Termos e Condições
+                        </a></li>
+                        <li><a href="/pt-pt/politica-cookies.html" class="footer-link">
+                            <i class="fas fa-chevron-right"></i> Política de Cookies
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Coluna 4: Contatos -->
+                <div class="footer-column footer-contact">
+                    <h4 data-i18n="footer.contact">Contactos</h4>
+                    
+                    <!-- Email -->
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <a href="mailto:tantunes@pontohub.com">tantunes@pontohub.com</a>
+                        </div>
+                    </div>
+                    
+                    <!-- WhatsApp -->
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <a href="https://wa.me/351963487687">+351 963 487 687</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Localizações -->
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p><strong>Lisboa, Portugal</strong></p>
+                            <p><strong>São Paulo, Brasil</strong></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Redes Sociais -->
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/pontohub" target="_blank" class="footer-social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/pontohub" target="_blank" class="footer-social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/pontohub" target="_blank" class="footer-social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/pontohub" target="_blank" class="footer-social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 PontoHub. <span data-i18n="footer.rights">Todos os direitos reservados. | A transformar o futuro, hoje.</span></p>
+                <p>&copy; 2025 PontoHub. <span data-i18n="footer.rights">Todos os direitos reservados. | Transformando o futuro, hoje.</span></p>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner PT-PT -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-container">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <h3 class="cookie-title">🍪 <span data-i18n="cookie.title">Utilizamos Cookies</span></h3>
+                    <p class="cookie-description" data-i18n="cookie.description">
+                        Utilizamos cookies para melhorar a sua experiência de navegação, personalizar conteúdo e analisar o nosso tráfego. 
+                        Ao clicar em "Aceitar Todos", concorda com o uso de TODOS os cookies.
+                    </p>
+                    <a href="#" class="cookie-link" onclick="openCookiePolicy()" data-i18n="cookie.learnMore">Saber mais</a>
+                </div>
+                <div class="cookie-actions">
+                    <button class="cookie-btn cookie-settings" onclick="openCookieSettings()">
+                        <i class="fas fa-cog"></i> <span data-i18n="cookie.settings">Definições</span>
+                    </button>
+                    <button class="cookie-btn cookie-reject" onclick="rejectCookies()">
+                        <span data-i18n="cookie.reject">Rejeitar</span>
+                    </button>
+                    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">
+                        <span data-i18n="cookie.accept">Aceitar Todos</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal PT-PT -->
+    <div id="cookieSettings" class="cookie-modal">
+        <div class="modal-overlay" onclick="closeCookieSettings()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-i18n="cookie.modal.title">Definições de Cookies</h2>
+                <button class="modal-close" onclick="closeCookieSettings()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-intro" data-i18n="cookie.modal.intro">
+                    Utilize os controlos abaixo para personalizar as suas preferências de cookies. 
+                    Alguns cookies são essenciais para o funcionamento do site e não podem ser desativados.
+                </p>
+                
+                <!-- Essential Cookies -->
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <div class="category-info">
+                            <h3 data-i18n="cookie.essential.title">Cookies Essenciais</h3>
+                            <p data-i18n="cookie.essential.desc">Necessários para o funcionamento básico do site. Não podem ser desativados.</p>
+                        </div>
+                        <div class="category-toggle">
+                            <label class="toggle-switch disabled">
+                                <input type="checkbox" id="essentialCookies" checked disabled>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Cookies -->
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <div class="category-info">
+                            <h3 data-i18n="cookie.analytics.title">Cookies de Análise</h3>
+                            <p data-i18n="cookie.analytics.desc">Ajudam-nos a entender como os visitantes interagem com o nosso site.</p>
+                        </div>
+                        <div class="category-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="analyticsCookies">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketing Cookies -->
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <div class="category-info">
+                            <h3 data-i18n="cookie.marketing.title">Cookies de Marketing</h3>
+                            <p data-i18n="cookie.marketing.desc">Utilizados para fornecer anúncios relevantes e campanhas de marketing.</p>
+                        </div>
+                        <div class="category-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="marketingCookies">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Functional Cookies -->
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <div class="category-info">
+                            <h3 data-i18n="cookie.functional.title">Cookies Funcionais</h3>
+                            <p data-i18n="cookie.functional.desc">Permitem funcionalidades personalizadas e melhoram a sua experiência.</p>
+                        </div>
+                        <div class="category-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="functionalCookies">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-reject" onclick="rejectAllFromSettings()">
+                    <span data-i18n="cookie.modal.rejectAll">Rejeitar Todos</span>
+                </button>
+                <button class="modal-btn modal-save" onclick="saveCookieSettings()">
+                    <span data-i18n="cookie.modal.save">Guardar Preferências</span>
+                </button>
+                <button class="modal-btn modal-accept" onclick="acceptAllFromSettings()">
+                    <span data-i18n="cookie.modal.acceptAll">Aceitar Todos</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Scroll to Top Button -->
     <a href="#" class="scroll-top">
@@ -438,5 +604,6 @@
     <script src="../assets/js/language.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/contato.js"></script>
+    <script src="/assets/js/cookie-manager.js"></script>
 </body>
 </html>

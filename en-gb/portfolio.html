@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Consent Mode do Google  -->
+    <script>
+        // Configuração de consentimento padrão
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Define consentimento padrão como negado
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'functionality_storage': 'denied',
+            'personalization_storage': 'denied',
+            'security_storage': 'granted'
+        });
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -58,6 +74,7 @@
     <!-- CSS with correct paths -->
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/portfolio.css">
+    <link rel="stylesheet" href="/assets/css/cookie-banner.css">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -399,30 +416,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="/en-gb/" class="footer-logo">
-                        <img src="../assets/images/pontohub-logo.svg" alt="PontoHub" class="logo-img" style="height: 30px; filter: brightness(0) invert(1);">
-                    </a>
-                    <p class="footer-description" data-i18n="footer.description">
-                        Transforming the future through technology. Software development, 
-                        AI, cloud computing and data analytics for companies that 
-                        want to lead.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </div>
-                </div>
+                <!-- Coluna 1: Serviços -->
                 <div class="footer-column">
                     <h4 data-i18n="footer.services">Services</h4>
                     <ul class="footer-links">
@@ -440,6 +434,7 @@
                         </a></li>
                     </ul>
                 </div>
+                <!-- Coluna 2: Empresa -->
                 <div class="footer-column">
                     <h4 data-i18n="footer.company">Company</h4>
                     <ul class="footer-links">
@@ -457,24 +452,193 @@
                         </a></li>
                     </ul>
                 </div>
+                <!-- Coluna 3: Legal -->
                 <div class="footer-column">
-                    <h4 data-i18n="footer.newsletter">Newsletter</h4>
-                    <div class="newsletter-box">
-                        <p data-i18n="footer.newsletter.text">Receive insights on technology and innovation.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email" class="newsletter-input" required>
-                            <button type="submit" class="newsletter-button">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </form>
-                    </div>
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/en-gb/privacy-policy.html" class="footer-link">
+                            <i class="fas fa-chevron-right"></i> Política de Privacidade
+                        </a></li>
+                        <li><a href="/en-gb/terms-conditions.html" class="footer-link">
+                            <i class="fas fa-chevron-right"></i> Termos e Condições
+                        </a></li>
+                        <li><a href="/en-gb/cookies-policy.html" class="footer-link">
+                            <i class="fas fa-chevron-right"></i> Política de Cookies
+                        </a></li>
+                    </ul>
                 </div>
+                <!-- Coluna 4: Contatos -->
+                <div class="footer-column footer-contact">
+                    <h4 data-i18n="footer.contact">Contacts</h4>
+                    
+                    <!-- Email -->
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <a href="mailto:tantunes@pontohub.com">tantunes@pontohub.com</a>
+                        </div>
+                    </div>
+                    
+                    <!-- WhatsApp -->
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <a href="https://wa.me/351963487687">+351 963 487 687</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Localizações -->
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p><strong>Lisboa, Portugal</strong></p>
+                            <p><strong>São Paulo, Brasil</strong></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Redes Sociais -->
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/pontohub" target="_blank" class="footer-social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/pontohub" target="_blank" class="footer-social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/pontohub" target="_blank" class="footer-social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/pontohub" target="_blank" class="footer-social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>    
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 PontoHub. <span data-i18n="footer.rights">All rights reserved. | Transforming the future, today.</span></p>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner EN-GB -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-container">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <h3 class="cookie-title">🍪 <span data-i18n="cookie.title">We Use Cookies</span></h3>
+                    <p class="cookie-description" data-i18n="cookie.description">
+                        We use cookies to improve your browsing experience, personalise content and analyse our traffic. 
+                        By clicking "Accept All", you agree to the use of ALL cookies.
+                    </p>
+                    <a href="#" class="cookie-link" onclick="openCookiePolicy()" data-i18n="cookie.learnMore">Learn more</a>
+                </div>
+                <div class="cookie-actions">
+                    <button class="cookie-btn cookie-settings" onclick="openCookieSettings()">
+                        <i class="fas fa-cog"></i> <span data-i18n="cookie.settings">Settings</span>
+                    </button>
+                    <button class="cookie-btn cookie-reject" onclick="rejectCookies()">
+                        <span data-i18n="cookie.reject">Reject</span>
+                    </button>
+                    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">
+                        <span data-i18n="cookie.accept">Accept All</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal EN-GB -->
+    <div id="cookieSettings" class="cookie-modal">
+        <div class="modal-overlay" onclick="closeCookieSettings()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-i18n="cookie.modal.title">Cookie Settings</h2>
+                <button class="modal-close" onclick="closeCookieSettings()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-intro" data-i18n="cookie.modal.intro">
+                    Use the controls below to customise your cookie preferences. 
+                    Some cookies are essential for the website to function and cannot be disabled.
+                </p>
+                
+                <!-- Essential Cookies -->
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <div class="category-info">
+                            <h3 data-i18n="cookie.essential.title">Essential Cookies</h3>
+                            <p data-i18n="cookie.essential.desc">Required for basic website functionality. Cannot be disabled.</p>
+                        </div>
+                        <div class="category-toggle">
+                            <label class="toggle-switch disabled">
+                                <input type="checkbox" id="essentialCookies" checked disabled>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analytics Cookies -->
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <div class="category-info">
+                            <h3 data-i18n="cookie.analytics.title">Analytics Cookies</h3>
+                            <p data-i18n="cookie.analytics.desc">Help us understand how visitors interact with our website.</p>
+                        </div>
+                        <div class="category-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="analyticsCookies">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketing Cookies -->
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <div class="category-info">
+                            <h3 data-i18n="cookie.marketing.title">Marketing Cookies</h3>
+                            <p data-i18n="cookie.marketing.desc">Used to deliver relevant ads and marketing campaigns.</p>
+                        </div>
+                        <div class="category-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="marketingCookies">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Functional Cookies -->
+                <div class="cookie-category">
+                    <div class="category-header">
+                        <div class="category-info">
+                            <h3 data-i18n="cookie.functional.title">Functional Cookies</h3>
+                            <p data-i18n="cookie.functional.desc">Enable personalised features and enhance your experience.</p>
+                        </div>
+                        <div class="category-toggle">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="functionalCookies">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-reject" onclick="rejectAllFromSettings()">
+                    <span data-i18n="cookie.modal.rejectAll">Reject All</span>
+                </button>
+                <button class="modal-btn modal-save" onclick="saveCookieSettings()">
+                    <span data-i18n="cookie.modal.save">Save Preferences</span>
+                </button>
+                <button class="modal-btn modal-accept" onclick="acceptAllFromSettings()">
+                    <span data-i18n="cookie.modal.acceptAll">Accept All</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Scroll to Top Button -->
     <a href="#" class="scroll-top">
@@ -486,6 +650,7 @@
     <script src="../assets/js/language.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/portfolio.js"></script>
+    <script src="/assets/js/cookie-manager.js"></script>
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">

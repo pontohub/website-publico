@@ -153,125 +153,37 @@ class LanguageManager {
         const keys = key.split('.');
         let translation = this.translations[this.currentLang];
         
-        if (!translation) {
-            return key;
-        }
+        if (!translation) return key;
         
         for (const k of keys) {
-            if (translation && translation[k]) {
-                translation = translation[k];
-            } else {
-                // Fallback para pt-br se não encontrar a tradução
-                translation = this.translations['pt-br'];
-                if (!translation) return key;
-                
-                for (const k2 of keys) {
-                    if (translation && translation[k2]) {
-                        translation = translation[k2];
-                    } else {
-                        return key; // Retorna a chave se não encontrar tradução
-                    }
-                }
-                return translation;
-            }
+            translation = translation[k];
+            if (!translation) return key;
         }
         
         return translation;
     }
 
-    // Atualiza meta tags para SEO
+    // Atualiza meta tags do idioma
     updateMetaTags() {
-        // Atualiza lang attribute
+        // Atualiza o atributo lang do HTML
         document.documentElement.lang = this.currentLang;
-
-        // Atualiza meta tags
-        this.updateMetaTag('description', this.getPageDescription());
-        this.updateMetaTag('keywords', this.getPageKeywords());
-
-        // Atualiza Open Graph
-        this.updateMetaProperty('og:locale', this.getOGLocale());
-        this.updateMetaProperty('og:description', this.getPageDescription());
-
-        // Adiciona links alternativos para outros idiomas
-        this.updateAlternateLinks();
-    }
-
-    // Atualiza uma meta tag
-    updateMetaTag(name, content) {
-        let meta = document.querySelector(`meta[name="${name}"]`);
-        if (!meta) {
-            meta = document.createElement('meta');
-            meta.name = name;
-            document.head.appendChild(meta);
+        
+        // Atualiza meta tag de idioma
+        const metaLang = document.querySelector('meta[http-equiv="content-language"]');
+        if (metaLang) {
+            metaLang.content = this.currentLang;
         }
-        meta.content = content;
-    }
-
-    // Atualiza uma meta property
-    updateMetaProperty(property, content) {
-        let meta = document.querySelector(`meta[property="${property}"]`);
-        if (!meta) {
-            meta = document.createElement('meta');
-            meta.setAttribute('property', property);
-            document.head.appendChild(meta);
+        
+        // Atualiza OG locale
+        const ogLocale = document.querySelector('meta[property="og:locale"]');
+        if (ogLocale) {
+            const localeMap = {
+                'pt-br': 'pt_BR',
+                'pt-pt': 'pt_PT',
+                'en-gb': 'en_GB'
+            };
+            ogLocale.content = localeMap[this.currentLang] || 'pt_BR';
         }
-        meta.content = content;
-    }
-
-    // Obtém a descrição da página no idioma atual
-    getPageDescription() {
-        const descriptions = {
-            'pt-br': 'PontoHub - Conectando ideias, transformando negócios. Líderes em transformação digital com soluções de software, IA, Cloud Computing e integração de sistemas.',
-            'pt-pt': 'PontoHub - A conectar ideias, a transformar negócios. Líderes em transformação digital com soluções de software, IA, Cloud Computing e integração de sistemas.',
-            'en-gb': 'PontoHub - Connecting ideas, transforming businesses. Digital transformation leaders with software solutions, AI, Cloud Computing and systems integration.'
-        };
-        return descriptions[this.currentLang] || descriptions['pt-br'];
-    }
-
-    // Obtém as palavras-chave no idioma atual
-    getPageKeywords() {
-        const keywords = {
-            'pt-br': 'desenvolvimento software, integração sistemas, transformação digital, inteligência artificial, cloud computing, portugal, brasil',
-            'pt-pt': 'desenvolvimento software, integração sistemas, transformação digital, inteligência artificial, cloud computing, portugal, brasil',
-            'en-gb': 'software development, systems integration, digital transformation, artificial intelligence, cloud computing, portugal, brazil'
-        };
-        return keywords[this.currentLang] || keywords['pt-br'];
-    }
-
-    // Obtém o locale para Open Graph
-    getOGLocale() {
-        const locales = {
-            'pt-br': 'pt_BR',
-            'pt-pt': 'pt_PT',
-            'en-gb': 'en_GB'
-        };
-        return locales[this.currentLang] || 'pt_BR';
-    }
-
-    // Atualiza links alternativos
-    updateAlternateLinks() {
-        // Remove links existentes
-        const existingLinks = document.querySelectorAll('link[rel="alternate"]');
-        existingLinks.forEach(link => link.remove());
-
-        // Adiciona novos links
-        const languages = ['pt-br', 'pt-pt', 'en-gb'];
-        const currentPage = this.getCurrentPageName();
-
-        languages.forEach(lang => {
-            const link = document.createElement('link');
-            link.rel = 'alternate';
-            link.hreflang = lang.toLowerCase();
-            link.href = `/${lang.toLowerCase()}/${currentPage}`;
-            document.head.appendChild(link);
-        });
-
-        // Adiciona x-default
-        const defaultLink = document.createElement('link');
-        defaultLink.rel = 'alternate';
-        defaultLink.hreflang = 'x-default';
-        defaultLink.href = `/${currentPage}`;
-        document.head.appendChild(defaultLink);
     }
 
     // Obtém o nome da página atual
@@ -322,55 +234,61 @@ class LanguageManager {
         // Obtém o caminho atual
         const currentPath = window.location.pathname;
         
-        // Remove o idioma atual do caminho
-        let pagePath = currentPath.replace(/^\/(pt-br|pt-pt|en-gb)\//, '/');
+        // Remove o idioma atual do caminho e barras extras
+        let pagePath = currentPath.replace(/^\/(pt-br|pt-pt|en-gb)\//, '');
         
-        // Se estiver na raiz do idioma, adiciona index.html
-        if (pagePath === '/' || pagePath === '') {
+        // Remove barras duplicadas no início
+        pagePath = pagePath.replace(/^\/+/, '');
+        
+        // Se estiver vazio ou apenas '/', é a home
+        if (!pagePath || pagePath === '/') {
             pagePath = 'index.html';
         }
         
-        // Remove .html se existir (para URLs limpas)
-        pagePath = pagePath.replace('.html', '');
+        // Garante que não há .html duplicado
+        if (!pagePath.endsWith('.html') && !pagePath.includes('.')) {
+            pagePath = pagePath + '.html';
+        }
         
-        // Ajusta nome da página para inglês se necessário
+        // Mapeia os nomes das páginas conforme o idioma
         if (newLang === 'en-gb') {
             const pageMap = {
-                'servicos': 'services',
-                'sobre': 'about',
-                'parceiros': 'partners',
-                'contato': 'contact'
+                'servicos.html': 'services.html',
+                'sobre.html': 'about.html',
+                'parceiros.html': 'partners.html',
+                'portfolio.html': 'portfolio.html',
+                'contato.html': 'contact.html',
+                'contacto.html': 'contact.html' // Para PT-PT
             };
             
-            Object.keys(pageMap).forEach(ptPage => {
-                if (pagePath.includes(ptPage)) {
-                    pagePath = pagePath.replace(ptPage, pageMap[ptPage]);
-                }
-            });
+            // Substitui se encontrar correspondência
+            if (pageMap[pagePath]) {
+                pagePath = pageMap[pagePath];
+            }
         } else if (this.currentLang === 'en-gb') {
             // Se estiver saindo do inglês, reverte os nomes
             const pageMap = {
-                'services': 'servicos',
-                'about': 'sobre',
-                'partners': 'parceiros',
-                'contact': 'contato'
+                'services.html': 'servicos.html',
+                'about.html': 'sobre.html',
+                'partners.html': 'parceiros.html',
+                'portfolio.html': 'portfolio.html',
+                'contact.html': newLang === 'pt-pt' ? 'contacto.html' : 'contato.html'
             };
             
-            Object.keys(pageMap).forEach(enPage => {
-                if (pagePath.includes(enPage)) {
-                    pagePath = pagePath.replace(enPage, pageMap[enPage]);
-                }
-            });
+            // Substitui se encontrar correspondência
+            if (pageMap[pagePath]) {
+                pagePath = pageMap[pagePath];
+            }
         }
         
-        // Ajusta contacto/contato para PT-PT
-        if (newLang === 'pt-pt' && pagePath.includes('contato')) {
-            pagePath = pagePath.replace('contato', 'contacto');
-        } else if (this.currentLang === 'pt-pt' && pagePath.includes('contacto')) {
-            pagePath = pagePath.replace('contacto', 'contato');
+        // Ajusta contacto/contato entre PT-BR e PT-PT
+        if (newLang === 'pt-pt' && pagePath === 'contato.html') {
+            pagePath = 'contacto.html';
+        } else if (newLang === 'pt-br' && pagePath === 'contacto.html') {
+            pagePath = 'contato.html';
         }
         
-        // Constrói nova URL
+        // Constrói nova URL sem barra dupla
         const newURL = `/${newLang.toLowerCase()}/${pagePath}`;
         
         // Redireciona
