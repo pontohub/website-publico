@@ -135,14 +135,6 @@ body nav.navbar .nav-container a.nav-logo img.logo-img {
     width: auto !important;
 }
 
-/* Remove elementos antigos */
-.logo-wrapper,
-.logo-shape,
-.logo-inner,
-.logo-text {
-    display: none !important;
-}
-
 /* Ajustes para diferentes telas */
 @media (max-width: 768px) {
     .navbar {
