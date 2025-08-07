@@ -15,7 +15,22 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
- else {
+
+// Cursor customizado (apenas desktop)
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+if (cursor && cursorFollower && window.innerWidth > 968) {
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(() => {
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
+        }, 100);
+    });
+} else if (cursor && cursorFollower) {
     cursor.style.display = 'none';
     cursorFollower.style.display = 'none';
 }
@@ -38,24 +53,78 @@ const handleScroll = debounce(() => {
 
 window.addEventListener('scroll', handleScroll, { passive: true });
 
-// Mobile Menu Toggle
+// ============================================
+// MOBILE MENU TOGGLE - CORRIGIDO
+// ============================================
 const mobileToggle = document.querySelector('.mobile-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-mobileToggle.addEventListener('click', () => {
-    mobileToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'visible';
-});
+if (mobileToggle && navMenu) {
+    // Click handler principal
+    mobileToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        mobileToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // Prevenir scroll quando menu está aberto
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
+    });
+    
+    // Suporte melhorado para toque
+    mobileToggle.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        this.click();
+    }, { passive: false });
+    
+    // Adicionar feedback visual no toque
+    mobileToggle.addEventListener('touchstart', function() {
+        this.style.opacity = '0.7';
+    });
+    
+    mobileToggle.addEventListener('touchend', function() {
+        setTimeout(() => {
+            this.style.opacity = '1';
+        }, 100);
+    });
+}
 
 // Close mobile menu on link click
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link, .nav-cta');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        mobileToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = 'visible';
+        if (mobileToggle && navMenu) {
+            mobileToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
     });
+});
+
+// Fechar menu ao clicar fora
+document.addEventListener('click', function(e) {
+    if (mobileToggle && navMenu) {
+        if (!mobileToggle.contains(e.target) && 
+            !navMenu.contains(e.target) && 
+            navMenu.classList.contains('active')) {
+            mobileToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
+    }
 });
 
 // Smooth Scrolling for anchor links
@@ -73,10 +142,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for Animations
+// ============================================
+// INTERSECTION OBSERVER - MELHORADO PARA MOBILE
+// ============================================
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: window.innerWidth <= 768 ? 0.05 : 0.1,
+    rootMargin: window.innerWidth <= 768 ? '0px 0px -50px 0px' : '0px 0px -100px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -84,9 +155,13 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             
-            // Animate numbers
+            // Animate numbers com delay para mobile
             if (entry.target.classList.contains('stat-number')) {
-                animateNumber(entry.target);
+                if (window.innerWidth <= 768) {
+                    setTimeout(() => animateNumber(entry.target), 100);
+                } else {
+                    animateNumber(entry.target);
+                }
             }
         }
     });
@@ -102,20 +177,34 @@ document.querySelectorAll('.stat-number').forEach(el => {
     observer.observe(el);
 });
 
-// Animate Numbers
+// ============================================
+// ANIMATE NUMBERS - CORRIGIDO PARA MOBILE
+// ============================================
 function animateNumber(element) {
+    // Prevenir animação duplicada
+    if (element.dataset.animated === 'true') return;
+    element.dataset.animated = 'true';
+    
     const target = parseInt(element.getAttribute('data-target'));
-    const duration = 2000;
+    const duration = window.innerWidth <= 768 ? 1500 : 2000; // Mais rápido no mobile
     const step = target / (duration / 16);
     let current = 0;
     
     const updateNumber = () => {
         current += step;
         if (current < target) {
-            element.innerText = Math.floor(current) + (target === 98 ? '' : '+');
+            if (target === 98) {
+                element.innerText = Math.floor(current) + '%';
+            } else {
+                element.innerText = Math.floor(current) + '+';
+            }
             requestAnimationFrame(updateNumber);
         } else {
-            element.innerText = target + (target === 98 ? '%' : '+');
+            if (target === 98) {
+                element.innerText = target + '%';
+            } else {
+                element.innerText = target + '+';
+            }
         }
     };
     
@@ -143,15 +232,26 @@ if (newsletterForm) {
 // Scroll to Top Button
 const scrollTopBtn = document.querySelector('.scroll-top');
 
-const handleScrollTop = debounce(() => {
-    if (window.scrollY > 500) {
-        scrollTopBtn.classList.add('visible');
-    } else {
-        scrollTopBtn.classList.remove('visible');
-    }
-}, 100);
+if (scrollTopBtn) {
+    const handleScrollTop = debounce(() => {
+        if (window.scrollY > 500) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    }, 100);
 
-window.addEventListener('scroll', handleScrollTop, { passive: true });
+    window.addEventListener('scroll', handleScrollTop, { passive: true });
+    
+    // Adicionar suporte para toque no botão scroll to top
+    scrollTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // Active Navigation Link Based on Current Page
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -220,3 +320,105 @@ function updateAnimations() {
 }
 
 window.addEventListener('scroll', requestTick, { passive: true });
+
+// ============================================
+// CORREÇÕES ESPECÍFICAS PARA MOBILE
+// ============================================
+
+// Detectar dispositivo móvel
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+if (isMobile || window.innerWidth <= 768) {
+    // Melhorar performance no mobile
+    document.addEventListener('DOMContentLoaded', function() {
+        // Desabilitar animações complexas no mobile
+        const complexAnimations = document.querySelectorAll('.parallax, .float-element');
+        complexAnimations.forEach(el => {
+            el.style.animation = 'none';
+            el.style.transform = 'none';
+        });
+        
+        // Garantir que todos os elementos estejam visíveis
+        const sections = document.querySelectorAll('.featured-services, .values-section, .stats-section, .testimonials, .cta');
+        sections.forEach(section => {
+            if (section) {
+                section.style.display = 'block';
+                section.style.visibility = 'visible';
+                section.style.opacity = '1';
+            }
+        });
+        
+        // Adicionar classe para estilos mobile específicos
+        document.body.classList.add('is-mobile');
+    });
+    
+    // Prevenir zoom em inputs no iOS
+    const metaViewport = document.querySelector('meta[name=viewport]');
+    if (metaViewport) {
+        metaViewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    }
+    
+    // Melhorar resposta ao toque
+    document.addEventListener('touchstart', function() {}, { passive: true });
+}
+
+// ============================================
+// GARANTIR VISIBILIDADE DOS ELEMENTOS NO MOBILE
+// ============================================
+window.addEventListener('load', function() {
+    if (window.innerWidth <= 768) {
+        // Forçar visibilidade de seções importantes
+        const importantSections = [
+            '.featured-services',
+            '.values-section', 
+            '.stats-section',
+            '.testimonials',
+            '.cta',
+            '.services',
+            '.portfolio',
+            '.timeline-section',
+            '.mvv-section',
+            '.milestones',
+            '.team',
+            '.tech-section',
+            '.certifications',
+            '.contact'
+        ];
+        
+        importantSections.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(el => {
+                if (el) {
+                    el.style.display = 'block';
+                    el.style.visibility = 'visible';
+                    el.style.opacity = '1';
+                }
+            });
+        });
+    }
+});
+
+// ============================================
+// FIX PARA O CONTADOR NO BANNER MOBILE
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 768) {
+        // Reinicializar contadores se necessário
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(number => {
+            // Resetar flag de animação
+            delete number.dataset.animated;
+            
+            // Criar novo observer específico para mobile
+            const mobileObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.dataset.animated) {
+                        animateNumber(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            mobileObserver.observe(number);
+        });
+    }
+});
