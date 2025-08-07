@@ -364,6 +364,41 @@
     .testimonial-card::before {
         font-size: 80px;
     }
+
+    .testimonial-wrapper {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        /* Esconder scrollbar */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    /* Esconder scrollbar no webkit */
+    .testimonial-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .testimonial-card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        display: block !important;
+    }
+    
+    /* Opcional: indicador de que pode deslizar */
+    .testimonial-wrapper::after {
+        content: '←→';
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--gray-400);
+        font-size: 0.75rem;
+        opacity: 0.5;
+    }
+    
 }
 
 @media (max-width: 640px) {

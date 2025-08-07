@@ -36,25 +36,34 @@ filterBtns.forEach(btn => {
 // Testimonial Slider
 const testimonialDots = document.querySelectorAll('.nav-dot');
 const testimonialCards = document.querySelectorAll('.testimonial-card');
+const testimonialWrapper = document.querySelector('.testimonial-wrapper');
 let currentTestimonial = 0;
 let autoSlideInterval;
 
 function showTestimonial(index) {
-    // Remove active from all cards and dots
-    testimonialCards.forEach(card => {
-        card.classList.remove('active', 'animate-in', 'visible');
-    });
-    
-    testimonialDots.forEach(dot => {
-        dot.classList.remove('active');
-    });
-    
-    // Activate the correct card and dot
-    testimonialCards[index].classList.add('active');
-    setTimeout(() => {
-        testimonialCards[index].classList.add('animate-in', 'visible');
-    }, 50);
-    testimonialDots[index].classList.add('active');
+    // Para mobile com scroll
+    if (window.innerWidth <= 768 && testimonialWrapper) {
+        const cardWidth = testimonialWrapper.offsetWidth;
+        testimonialWrapper.scrollTo({
+            left: cardWidth * index,
+            behavior: 'smooth'
+        });
+    } else {
+        // Comportamento desktop original
+        testimonialCards.forEach(card => {
+            card.classList.remove('active', 'animate-in', 'visible');
+        });
+        
+        testimonialDots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        testimonialCards[index].classList.add('active');
+        setTimeout(() => {
+            testimonialCards[index].classList.add('animate-in', 'visible');
+        }, 50);
+        testimonialDots[index].classList.add('active');
+    }
     
     currentTestimonial = index;
 }
@@ -84,13 +93,48 @@ startAutoSlide();
 
 // Pause auto-slide on hover
 const testimonialSlider = document.querySelector('.testimonial-slider');
-testimonialSlider.addEventListener('mouseenter', () => {
-    clearInterval(autoSlideInterval);
-});
+if (testimonialSlider) {
+    testimonialSlider.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+    });
 
-testimonialSlider.addEventListener('mouseleave', () => {
-    startAutoSlide();
-});
+    testimonialSlider.addEventListener('mouseleave', () => {
+        startAutoSlide();
+    });
+}
+
+// Sincronizar swipe com bolinhas no mobile
+if (testimonialWrapper && window.innerWidth <= 768) {
+    // Detectar mudança de scroll
+    testimonialWrapper.addEventListener('scroll', () => {
+        clearInterval(autoSlideInterval); // Para o auto-slide durante scroll manual
+        
+        const scrollLeft = testimonialWrapper.scrollLeft;
+        const cardWidth = testimonialWrapper.offsetWidth;
+        const currentIndex = Math.round(scrollLeft / cardWidth);
+        
+        // Atualizar bolinhas
+        testimonialDots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+        
+        // Atualizar variável global
+        currentTestimonial = currentIndex;
+    });
+    
+    // Reiniciar auto-slide após parar de fazer scroll
+    let scrollTimeout;
+    testimonialWrapper.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            startAutoSlide();
+        }, 3000); // Reinicia auto-slide 3 segundos após parar de scrollar
+    });
+}
 
 // Portfolio Item Click Effect
 portfolioItems.forEach(item => {
