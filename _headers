@@ -1,31 +1,135 @@
-# _headers - Headers de segurança e performance
+# _headers - Headers de segurança e performance para PontoHub
 
+# ====================================
+# HEADERS GLOBAIS DE SEGURANÇA
+# ====================================
 /*
+  # Proteção contra clickjacking
   X-Frame-Options: SAMEORIGIN
+  
+  # Previne MIME type sniffing
   X-Content-Type-Options: nosniff
+  
+  # Proteção XSS (para browsers antigos)
   X-XSS-Protection: 1; mode=block
+  
+  # Controle de referrer
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  
+  # Permissões de recursos
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  
+  # HTTPS forçado (HSTS)
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
 
-# Cache para assets estáticos
+# ====================================
+# CACHE DE 1 ANO - ASSETS ESTÁTICOS
+# ====================================
+
+# Todos os assets (CSS, JS, imagens, etc)
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Imagens em qualquer pasta
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Cache para HTMLs
+# Tipos específicos de imagem
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.gif
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# ====================================
+# FONTES - 1 ANO COM CORS
+# ====================================
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/*.eot
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# ====================================
+# CACHE CURTO - CONTEÚDO DINÂMICO
+# ====================================
+
+# Páginas HTML - 1 hora
 /*.html
   Cache-Control: public, max-age=3600, must-revalidate
 
-# Cache para CSS e JS
-/*.css
+# Página inicial - 1 hora
+/
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Páginas de idiomas - 1 hora
+/pt-br/
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/pt-pt/
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/en-gb/
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# ====================================
+# ARQUIVOS ESPECIAIS
+# ====================================
+
+# Robots.txt - 1 dia
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+# Sitemaps - 1 dia
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/sitemap-*.xml
+  Cache-Control: public, max-age=86400
+
+# Manifest (PWA) - 1 semana
+/manifest.json
   Cache-Control: public, max-age=604800
 
-/*.js
-  Cache-Control: public, max-age=604800
+# ====================================
+# PERFORMANCE ADICIONAL
+# ====================================
 
-# Fontes
-/*.woff2
-  Cache-Control: public, max-age=31536000
-  Access-Control-Allow-Origin: *
+# Early hints para recursos críticos em páginas HTML
+/*.html
+  Link: </assets/css/global.css>; rel=preload; as=style
+  Link: </assets/images/pontohub-logo.svg>; rel=preload; as=image
+  Link: <https://fonts.googleapis.com>; rel=preconnect
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+
+/
+  Link: </assets/css/global.css>; rel=preload; as=style
+  Link: </assets/images/pontohub-logo.svg>; rel=preload; as=image
+  Link: <https://fonts.googleapis.com>; rel=preconnect
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin

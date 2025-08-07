@@ -25,3 +25,60 @@ config.local.js
 .htaccess
 .htaccess.local
 *.local
+
+# Scripts de versionamento
+add-version.sh
+add-version-*.sh
+increment-version.sh
+smart-version*.sh
+*.sh
+
+# ============================================
+# VERSIONAMENTO - NÃO ENVIAR PARA O GIT
+# ============================================
+
+# Scripts de versionamento
+add-version.sh
+add-version-*.sh
+increment-version.sh
+smart-version*.sh
+*.sh
+
+# Backups gerados pelos scripts
+backup_*/
+backup_version_*/
+backup_increment_*/
+backup_smart_*/
+backup_*
+
+# Logs de versionamento
+version-history.log
+version-*.log
+*.log
+
+# Arquivos de controle de hash
+.version-hashes
+.version-hashes.tmp
+.version-hashes.*
+
+# Arquivos temporários do sed
+*.bak
+*~
+
+# ============================================
+# DESENVOLVIMENTO LOCAL
+# ============================================
+
+# MAMP/XAMPP
+*.local.php
+config.local.php
+
+# Testes
+test/
+tests/
+*.test.*
+
+# Documentação local
+docs/local/
+TODO.md
+NOTES.md
