@@ -58,7 +58,7 @@ class LanguageManager {
         const selector = `
             <div class="language-selector">
                 <button class="lang-current" aria-label="Selecionar idioma">
-                    <img src="../assets/images/flags/${this.getFlagCode()}.svg" alt="${this.currentLang}" width="20" height="15">
+                    <img src="../assets/images/flags/${this.getFlagCode()}.svg" alt="${this.getFlagAltText()}" width="20" height="15">
                     <span>${this.getLanguageShortName()}</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
@@ -106,6 +106,16 @@ class LanguageManager {
             'en-gb': 'EN'
         };
         return names[this.currentLang] || 'PT-BR';
+    }
+
+    // Retorna o texto alternativo apropriado para a bandeira
+    getFlagAltText() {
+        const altTexts = {
+            'pt-br': 'Bandeira do Brasil',
+            'pt-pt': 'Bandeira de Portugal',
+            'en-gb': 'Bandeira do Reino Unido'
+        };
+        return altTexts[this.currentLang] || 'Bandeira do Brasil';
     }
 
     // Traduz a página

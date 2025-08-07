@@ -278,6 +278,16 @@ body nav.navbar .nav-container a.nav-logo img.logo-img {
 }
 
 /* Footer - Versão 10 */
+/* Mantém h3 do footer com o mesmo estilo visual que tinha como h4 */
+.footer h3,
+.footer-column h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+    font-family: "Space Grotesk", sans-serif;
+}
+
 .footer {
     background: #0A2540; /* dark-blue */
     color: white;
