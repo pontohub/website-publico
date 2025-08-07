@@ -15,7 +15,7 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-} else {
+ else {
     cursor.style.display = 'none';
     cursorFollower.style.display = 'none';
 }

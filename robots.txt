@@ -21,9 +21,9 @@ Disallow: /node_modules/
 Disallow: *.log
 Disallow: *.tmp
 Disallow: *.temp
-Disallow: .env
-Disallow: .htaccess
-Disallow: .gitignore
+Disallow: /.env
+Disallow: /.htaccess
+Disallow: /.gitignore
 
 # Crawl delay para evitar sobrecarga
 Crawl-delay: 1
