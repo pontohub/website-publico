@@ -12,11 +12,11 @@
     article h1,
     aside h1,
     nav h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem) !important;
+        font-size: clamp(2rem, 5vw, 3.5rem);
     }
 
     .hero-title {
-        font-size: clamp(2.5rem, 5vw, 4rem) !important;
+        font-size: clamp(2.5rem, 5vw, 4rem);
         line-height: 1.1;
     }
 /* Reset e Box Model */
