@@ -4,6 +4,24 @@
    Extraído do global.css original
    ============================================ */
 
+/* ============================================
+   FIX: Chrome h1 font-size deprecation warning
+   DEVE VIR PRIMEIRO - Antes de qualquer reset
+   ============================================ */
+section h1,
+article h1,
+aside h1,
+nav h1 {
+    font-size: inherit; /* Fallback seguro */
+}
+
+/* Específico para o teu hero */
+section .hero-title,
+section h1.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+}
+
 /* Reset e Box Model */
 * {
     margin: 0;
@@ -182,6 +200,11 @@ a {
 }
 
 @media (max-width: 768px) {
+
+    section h1,
+    section .hero-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+    }
     .navbar {
         padding: 0.5rem 0;
     }

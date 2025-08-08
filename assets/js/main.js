@@ -507,4 +507,16 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileObserver.observe(number);
         });
     }
+
+    // ============================================
+// TESTE TEMPORÁRIO - Forçar reflow
+// Ver se resolve aviso do h1 font-size
+// ============================================
+window.addEventListener('load', () => {
+    // Força o browser a recalcular estilos
+    document.body.offsetHeight; 
+    
+    // Log para confirmar que executou
+    console.log('Reflow forçado - teste h1');
+
 });
