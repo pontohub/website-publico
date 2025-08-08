@@ -441,12 +441,7 @@ if (isMobile || window.innerWidth <= 768) {
         });
     });
     
-    // Prevenir zoom em inputs no iOS
-    const metaViewport = document.querySelector('meta[name=viewport]');
-    if (metaViewport) {
-        metaViewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
-    }
-    
+   
     // Melhorar resposta ao toque
     document.addEventListener('touchstart', function() {}, { passive: true });
 }

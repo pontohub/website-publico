@@ -396,6 +396,20 @@
 
 /* Correções específicas para mobile */
 @media (max-width: 768px) {
+
+    /* iOS não faz zoom se a fonte for >= 16px */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    input[type="url"],
+    input[type="search"],
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+    
     /* Correção do texto "Líderes em transformação digital" */
     .hero-badge {
         display: inline-flex;
