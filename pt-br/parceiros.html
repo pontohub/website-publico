@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Consent Mode do Google  -->
+    <!-- Consent Mode do Google (MANTIDO INTACTO) -->
     <script>
         // Configuração de consentimento padrão
         window.dataLayer = window.dataLayer || [];
@@ -20,7 +20,7 @@
         });
     </script>
 
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager (MANTIDO INTACTO) -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -28,10 +28,10 @@
     })(window,document,'script','dataLayer','GTM-KRZ4MGRX');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Favicon  -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon_pontohub.svg">
     
-    <!-- SEO Meta Tags Multi-idiomas -->
+    <!-- SEO Meta Tags Multi-idiomas (TODOS MANTIDOS) -->
     <meta name="description" content="Parceiros PontoHub - Tecnologias e plataformas que utilizamos para criar soluções inovadoras. AWS, Azure, Google Cloud, SAP, Salesforce e mais.">
     <meta name="keywords" content="parceiros tecnológicos, aws, azure, google cloud, sap, salesforce, tecnologias, plataformas">
     <meta name="author" content="PontoHub">
@@ -40,13 +40,13 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.pontohub.com/pt-br/parceiros">
     
-    <!-- Hreflang Tags -->
+    <!-- Hreflang Tags (TODOS MANTIDOS) -->
     <link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/parceiros">
     <link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/parceiros">
     <link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/partners">
     <link rel="alternate" hreflang="x-default" href="https://www.pontohub.com/parceiros">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook (TODOS MANTIDOS) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pontohub.com/pt-br/parceiros">
     <meta property="og:title" content="Parceiros Tecnológicos - PontoHub | Tecnologias de Ponta">
@@ -56,30 +56,131 @@
     <meta property="og:locale:alternate" content="pt_PT">
     <meta property="og:locale:alternate" content="en_GB">
     
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.pontohub.com/pt-br/parceiros">
+    <meta property="twitter:title" content="Parceiros Tecnológicos - PontoHub">
+    <meta property="twitter:description" content="Parceiros e tecnologias que utilizamos para criar soluções inovadoras.">
+    
     <title>Parceiros Tecnológicos - PontoHub | Tecnologias de Ponta</title>
     
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-     <!-- Preload de recursos críticos -->
-    <link rel="preload" href="/assets/css/global.css?v=0.0.1" as="style">
-    <link rel="preload" href="/assets/images/pontohub-logo.svg" as="image">
-
+    
     <!-- DNS Prefetch para recursos futuros -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
-    <!-- Fonts with display swap for better performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- ================================================= -->
+    <!-- CRITICAL CSS - ARQUIVO SEPARADO (SÍNCRONO)       -->
+    <!-- ================================================= -->
+    <link rel="preload" href="../assets/css/critical.css?v=0.0.2" as="style">
+    <link rel="stylesheet" href="../assets/css/critical.css?v=0.0.2">
     
+    <!-- ================================================= -->
+    <!-- PRELOAD DO LOGO (Importante para FCP)            -->
+    <!-- ================================================= -->
+    <link rel="preload" href="/assets/images/pontohub-logo.svg" as="image" type="image/svg+xml">
     
-    <!-- CSS com caminhos corretos -->
-    <link rel="stylesheet" href="../assets/css/global.css?v=0.0.1">
-    <link rel="stylesheet" href="../assets/css/parceiros.css?v=0.0.1">
-    <link rel="stylesheet" href="/assets/css/cookie-banner.css?v=0.0.1">
-
+    <!-- ================================================= -->
+    <!-- GOOGLE FONTS - OTIMIZADO                         -->
+    <!-- ================================================= -->
+    <!-- Fontes essenciais primeiro -->
+    <link rel="preload" 
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" 
+          as="style" 
+          onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Fontes completas carregam depois -->
+    <link rel="preload" 
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" 
+          as="style" 
+          onload="this.onload=null;this.rel='stylesheet'">
+    
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <!-- ================================================= -->
+    <!-- CSS GLOBAL - ASSÍNCRONO                          -->
+    <!-- ================================================= -->
+    <link rel="preload" 
+          href="../assets/css/global.css?v=0.0.2" 
+          as="style" 
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/global.css?v=0.0.2">
+    </noscript>
+    
+    <!-- ================================================= -->
+    <!-- CSS PARCEIROS - ASSÍNCRONO                       -->
+    <!-- ================================================= -->
+    <link rel="preload" 
+          href="../assets/css/parceiros.css?v=0.0.1" 
+          as="style" 
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/parceiros.css?v=0.0.1">
+    </noscript>
+    
+    <!-- ================================================= -->
+    <!-- COOKIE BANNER CSS - CARREGA COM DELAY            -->
+    <!-- ================================================= -->
+    <link rel="preload" 
+          href="/assets/css/cookie-banner.css?v=0.0.1" 
+          as="style" 
+          onload="this.onload=null;setTimeout(()=>this.rel='stylesheet',1000)">
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/cookie-banner.css?v=0.0.1">
+    </noscript>
+    
+    <!-- ================================================= -->
+    <!-- FONT AWESOME - CARREGAMENTO INTELIGENTE          -->
+    <!-- Importante para logos de parceiros               -->
+    <!-- ================================================= -->
+    <script>
+        (function() {
+            let faLoaded = false;
+            function loadFontAwesome() {
+                if (faLoaded) return;
+                faLoaded = true;
+                
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+                link.crossOrigin = 'anonymous';
+                
+                // Truque para não bloquear: carrega como print, depois muda para all
+                link.media = 'print';
+                link.onload = function() { 
+                    this.media = 'all';
+                };
+                
+                document.head.appendChild(link);
+            }
+            
+            // Carrega ao primeiro movimento do mouse ou toque
+            ['mousemove', 'touchstart', 'scroll', 'keydown', 'click'].forEach(function(event) {
+                window.addEventListener(event, loadFontAwesome, { once: true, passive: true });
+            });
+            
+            // Ou carrega após 3 segundos
+            setTimeout(loadFontAwesome, 3000);
+        })();
+    </script>
+    
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    
+    <!-- ================================================= -->
+    <!-- POLYFILL PARA SUPORTE DE PRELOAD                 -->
+    <!-- ================================================= -->
+    <script>
+        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+        !function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(function(){t.media=e},0)},!o.support()){var t,d=n.document.getElementsByTagName("link");for(t=0;t<d.length;t++){var e=d[t];"preload"!==e.rel||"style"!==e.getAttribute("as")||e.getAttribute("data-loadcss")||(e.setAttribute("data-loadcss",!0),o.bindMediaToggle(e))}}}(this);
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
