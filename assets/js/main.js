@@ -239,45 +239,70 @@ document.querySelectorAll('.animate-in').forEach(el => {
 
 // Observe stat numbers
 document.querySelectorAll('.stat-number').forEach(el => {
-    observer.observe(el);
+    // Configuração específica para garantir que user vê a animação
+    const optimizedObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Pequeno delay para garantir que o olho "foca"
+                    const delay = window.innerWidth <= 768 ? 150 : 50;
+                    
+                    setTimeout(() => {
+                        animateNumber(entry.target);
+                    }, delay);
+                    
+                    // Desconecta após animar (performance!)
+                    optimizedObserver.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            // Só anima quando 30% do elemento está visível
+            threshold: 0.3,
+            // Margem para começar um pouco antes
+            rootMargin: '-50px 0px'
+        }
+    );
+    
+    optimizedObserver.observe(el);
 });
 
 // ============================================
 // ANIMATE NUMBERS - CORRIGIDO PARA MOBILE
 // ============================================
 function animateNumber(element) {
-    // Prevenir animação duplicada
     if (element.dataset.animated === 'true') return;
     element.dataset.animated = 'true';
     
     const target = parseInt(element.getAttribute('data-target'));
-    const duration = window.innerWidth <= 768 ? 1500 : 2000; // Mais rápido no mobile
-    const step = target / (duration / 16);
+    const duration = window.innerWidth <= 768 ? 1200 : 1500; // Mais rápido
+    let start = null;
     let current = 0;
     
-    const updateNumber = () => {
-        current += step;
-        if (current < target) {
-            domBatch.write(() => {
-                if (target === 98) {
-                    element.innerText = Math.floor(current) + '%';
-                } else {
-                    element.innerText = Math.floor(current) + '+';
-                }
-            });
+    // Easing function para movimento mais natural
+    const easeOutQuad = (t) => t * (2 - t);
+    
+    const updateNumber = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        
+        // Aplica easing
+        current = Math.floor(easeOutQuad(progress) * target);
+        
+        domBatch.write(() => {
+            if (target === 98) {
+                element.innerText = current + '%';
+            } else {
+                element.innerText = current + '+';
+            }
+        });
+        
+        if (progress < 1) {
             requestAnimationFrame(updateNumber);
-        } else {
-            domBatch.write(() => {
-                if (target === 98) {
-                    element.innerText = target + '%';
-                } else {
-                    element.innerText = target + '+';
-                }
-            });
         }
     };
     
-    updateNumber();
+    requestAnimationFrame(updateNumber);
 }
 
 // Newsletter Form
@@ -484,28 +509,3 @@ window.addEventListener('load', function() {
     }
 });
 
-// ============================================
-// FIX PARA O CONTADOR NO BANNER MOBILE
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.innerWidth <= 768) {
-        // Reinicializar contadores se necessário
-        const statNumbers = document.querySelectorAll('.stat-number');
-        statNumbers.forEach(number => {
-            // Resetar flag de animação
-            delete number.dataset.animated;
-            
-            // Criar novo observer específico para mobile
-            const mobileObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !entry.target.dataset.animated) {
-                        animateNumber(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            mobileObserver.observe(number);
-        });
-    }
-
-});
