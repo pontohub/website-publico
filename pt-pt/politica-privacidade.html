@@ -37,7 +37,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/global.css?v=0.0.1">
+    <link rel="preload" href="../assets/css/global.css?v=0.0.1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../assets/css/global.css?v=0.0.1"></noscript>
     <link rel="stylesheet" href="../assets/css/legal.css?v=0.0.1">
 </head>
 <body>
@@ -50,7 +51,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="/pt-pt/" class="nav-logo">
-                <img src="../assets/images/pontohub-logo.svg" alt="PontoHub" class="logo-img">
+                <img src="../assets/images/pontohub-logo.svg" alt="PontoHub" class="logo-img" width="180" height="45">
             </a>
             <ul class="nav-menu">
                 <li><a href="/pt-pt/" class="nav-link">Início</a></li>
