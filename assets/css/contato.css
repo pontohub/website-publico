@@ -1,6 +1,7 @@
 /* ===================================
    PONTOHUB - CSS CONTATO
    Estilos específicos para a página de contato
+   VERSÃO COMPLETA COM DISCORD INTEGRATION
    =================================== */
 
 /* Page Hero */
@@ -199,7 +200,10 @@
     box-shadow: var(--shadow-lg);
 }
 
-/* Contact Form */
+/* ===================================
+   CONTACT FORM - ESTILOS COMPLETOS
+   =================================== */
+
 .contact-form {
     background: var(--gray-50);
     padding: 3rem;
@@ -253,10 +257,17 @@
     transition: var(--transition-base);
 }
 
+/* Estado de foco melhorado */
 .form-input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(11, 67, 135, 0.1);
+    box-shadow: 0 0 0 3px rgba(11, 67, 135, 0.1);
+}
+
+/* Estado de erro */
+.form-input.error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
 }
 
 textarea.form-input {
@@ -270,17 +281,23 @@ textarea.form-input {
     background-repeat: no-repeat;
     background-position: right 1.5rem center;
     padding-right: 3rem;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: start;
-    gap: 0.75rem;
     cursor: pointer;
 }
 
+/* Checkbox personalizado */
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
 .checkbox-label input[type="checkbox"] {
-    margin-top: 0.25rem;
+    margin-top: 4px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
 }
 
 .checkbox-label a {
@@ -292,6 +309,7 @@ textarea.form-input {
     text-decoration: underline;
 }
 
+/* Botão de envio */
 .form-submit {
     width: 100%;
     padding: 1.25rem;
@@ -340,7 +358,104 @@ textarea.form-input {
     z-index: 1;
 }
 
-/* FAQ Section */
+/* Estado desabilitado do botão */
+.form-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.form-submit:disabled:hover {
+    transform: none;
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===================================
+   MENSAGENS DE FEEDBACK (DISCORD)
+   =================================== */
+
+/* Animação para mensagens */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mensagens de sucesso e erro */
+.form-message {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    animation: slideDown 0.3s ease-out;
+    font-size: 16px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.form-success-message,
+.success-message {
+    background: #10b981;
+    color: white;
+    animation: slideDown 0.3s ease-out;
+}
+
+.form-error-message,
+.error-message {
+    background: #ef4444;
+    color: white;
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Ícones nas mensagens */
+.form-message i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Notificações popup (do JavaScript) */
+.notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 9999;
+    max-width: 400px;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.notification.success {
+    background: var(--primary);
+    color: white;
+}
+
+.notification.error {
+    background: #e74c3c;
+    color: white;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* ===================================
+   FAQ SECTION
+   =================================== */
+
 .faq {
     padding: 120px 0;
     background: var(--gray-50);
@@ -409,7 +524,10 @@ textarea.form-input {
     line-height: 1.8;
 }
 
-/* Map Section */
+/* ===================================
+   MAP SECTION
+   =================================== */
+
 .map-section {
     position: relative;
     height: 400px;
@@ -459,7 +577,10 @@ textarea.form-input {
     color: var(--gray-400);
 }
 
-/* Responsive Design */
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
 @media (max-width: 1200px) {
     .contact-container {
         grid-template-columns: 1fr;
@@ -485,11 +606,21 @@ textarea.form-input {
     }
 
     .form-group {
-        grid-column: span 1;
+        grid-column: span 1 !important;
+    }
+
+    .form-group.full {
+        grid-column: span 1 !important;
     }
 
     .quick-contact {
         flex-direction: column;
+    }
+
+    .notification {
+        right: 10px;
+        left: 10px;
+        max-width: calc(100% - 20px);
     }
 }
 
@@ -504,5 +635,10 @@ textarea.form-input {
 
     .form-title {
         font-size: 1.5rem;
+    }
+    
+    .form-submit {
+        font-size: 1rem;
+        padding: 1rem;
     }
 }
