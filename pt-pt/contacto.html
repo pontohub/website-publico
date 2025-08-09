@@ -170,8 +170,8 @@
     <!-- ========================================= -->
     <!-- 5. SEO META TAGS (CONTACTO PT-PT)         -->
     <!-- ========================================= -->
-    <meta name="description" content="Entre em contacto com a PontoHub - Lisboa e São Paulo. Transforme as suas ideias em soluções tecnológicas inovadoras. WhatsApp: +351 963 487 687">
-    <meta name="keywords" content="contacto pontohub, orçamento, consultoria tecnológica, desenvolvimento software, lisboa, são paulo">
+    <meta name="description" content="Fale com a PontoHub. Desenvolvimento de software, integração de sistemas e automação para empresas. Resposta em até 24h.">
+    <meta name="keywords" content="contacto pontohub, orçamento, consultoria tecnológica, desenvolvimento software, lisboa, são paulo, espanha">
     <meta name="author" content="PontoHub">
     <meta name="robots" content="index, follow">
     
@@ -187,8 +187,8 @@
     <!-- Open Graph (CONTACTO PT-PT) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pontohub.com/pt-pt/contacto">
-    <meta property="og:title" content="Contacto - PontoHub | Fale Connosco">
-    <meta property="og:description" content="Entre em contacto com a PontoHub. Transforme as suas ideias em soluções tecnológicas inovadoras.">
+    <meta property="og:title" content="Contacto PontoHub | Desenvolvimento, Integração e Automação">
+    <meta property="og:description" content="Fale com a PontoHub. Desenvolvimento de software, integração de sistemas e automação para empresas. Resposta em até 24h.">
     <meta property="og:image" content="https://www.pontohub.com/images/og-contact.jpg">
     
     <!-- Twitter -->
@@ -197,7 +197,7 @@
     <!-- ========================================= -->
     <!-- 6. TÍTULO (CONTACTO PT-PT)                -->
     <!-- ========================================= -->
-    <title>Contacto - PontoHub | Fale Connosco</title>
+    <title>Contacto PontoHub | Desenvolvimento, Integração e Automação</title>
     
     <!-- ========================================= -->
     <!-- 7. FONTES OTIMIZADAS (SÓ INTER)          -->
@@ -292,10 +292,10 @@
                     <span data-i18n="contact.title">Vamos criar algo</span> 
                     <span class="text-gradient" data-i18n="contact.title.gradient">extraordinário juntos</span>
                 </h1>
-                <p class="hero-subtitle" data-i18n="contact.subtitle">
+                <!--<p class="hero-subtitle" data-i18n="contact.subtitle">
                     Descubra como os nossos especialistas podem impulsionar o seu projeto 
                     e transformar as suas ideias em realidade.
-                </p>
+                </p>-->
             </div>
         </div>
     </section>
@@ -312,9 +312,9 @@
                         <h4 class="contact-title" data-i18n="contact.offices">Escritórios</h4>
                         <p class="contact-text">
                             <strong>Lisboa, Portugal</strong><br>
-                            Avenida da Liberdade<br><br>
-                            <strong>São Paulo, Brasil</strong><br>
-                            Vila Olímpia
+                            <br><br>
+                            <strong>Rio de Janeiro, Brasil</strong><br>
+                            
                         </p>
                     </div>
                     <div class="contact-card animate-in">
@@ -324,7 +324,8 @@
                         <h4 class="contact-title" data-i18n="contact.phone">Telefone/WhatsApp</h4>
                         <p class="contact-text">
                             <a href="tel:+351963487687">+351 963 487 687</a><br>
-                            Atendimento PT/BR<br>
+                            <a href="tel:+5521971276907">+55 21 97127 6907</a><br>
+                            <br>
                             Segunda a Sexta: 9h - 18h
                         </p>
                     </div>
@@ -334,8 +335,8 @@
                         </div>
                         <h4 class="contact-title" data-i18n="contact.email">Email</h4>
                         <p class="contact-text">
-                            <a href="mailto:tantunes@pontohub.com">tantunes@pontohub.com</a><br>
-                            <a href="mailto:contacto@pontohub.com">contacto@pontohub.com</a><br>
+                            <a href="mailto:info@pontohub.com">info@pontohub.com</a><br>
+                            <a href="mailto:suporte@pontohub.com">suporte@pontohub.com</a><br>
                             Resposta em até 24h
                         </p>
                     </div>
@@ -346,8 +347,8 @@
                         <h4 class="contact-title" data-i18n="contact.social">Redes Sociais</h4>
                         <p class="contact-text">
                             <a href="#" target="_blank">LinkedIn</a><br>
-                            <a href="#" target="_blank">GitHub</a><br>
-                            <a href="#" target="_blank">Instagram</a>
+                            <!--<a href="#" target="_blank">GitHub</a><br>
+                            <a href="#" target="_blank">Instagram</a>-->
                         </p>
                     </div>
                 </div>
@@ -358,14 +359,316 @@
                         <i class="fab fa-whatsapp"></i>
                         <span data-i18n="contact.whatsapp">Conversar no WhatsApp</span>
                     </a>
-                    <a href="mailto:tantunes@pontohub.com" class="quick-btn email">
+                    <a href="mailto:info@pontohub.com" class="quick-btn email">
                         <i class="fas fa-envelope"></i>
                         <span data-i18n="contact.send.email">Enviar Email</span>
                     </a>
                 </div>
             </div>
+            
+            <!-- FORMULÁRIO DE CONTATO PONTOHUB COM FORMSPREE -->
+<form class="contact-form animate-in" 
+      id="contact-form"
+      action="https://formspree.io/f/xnnzldnv" 
+      method="POST">
+    
+    <h3 class="form-title" data-i18n="contact.form.title">Solicite um Orçamento</h3>
+    <p class="form-subtitle" data-i18n="contact.form.subtitle">Preencha o formulário e entraremos em contacto em até 24 horas.</p>
+    
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="name" class="form-label"><span data-i18n="form.name">Nome Completo</span> *</label>
+            <input type="text" id="name" name="name" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email" class="form-label"><span data-i18n="form.email">Email</span> *</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="company" class="form-label"><span data-i18n="form.company">Empresa</span> *</label>
+            <input type="text" id="company" name="company" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone" class="form-label"><span data-i18n="form.phone">WhatsApp/Telefone</span> *</label>
+            <input type="tel" id="phone" name="phone" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="country" class="form-label"><span data-i18n="form.country">País</span> *</label>
+            <select id="country" name="country" class="form-input form-select" required>
+                <option value="">Selecione o país</option>
+                <option value="brasil">Brasil</option>
+                <option value="portugal">Portugal</option>
+                <option value="outros">Outros</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="service" class="form-label"><span data-i18n="form.service">Serviço de Interesse</span> *</label>
+            <select id="service" name="service" class="form-input form-select" required>
+                <option value="">Selecione um serviço</option>
+                <option value="dev">Ponto Dev - Desenvolvimento</option>
+                <option value="data">Ponto Data - Analytics</option>
+                <option value="ai">IA Hub - Inteligência Artificial</option>
+                <option value="integration">Hub Integration - Integração</option>
+                <option value="cloud">Cloud Solutions</option>
+                <option value="security">Cibersegurança</option>
+                <option value="consulting">Consultoria Geral</option>
+            </select>
+        </div>
+        
+        <div class="form-group full">
+            <label for="budget" class="form-label" data-i18n="form.budget">Orçamento Estimado</label>
+            <select id="budget" name="budget" class="form-input form-select">
+                <option value="">Selecione uma faixa</option>
+                <option value="5k-10k">€5.000 - €10.000</option>
+                <option value="10k-25k">€10.000 - €25.000</option>
+                <option value="25k-50k">€25.000 - €50.000</option>
+                <option value="50k-100k">€50.000 - €100.000</option>
+                <option value="100k+">Acima de €100.000</option>
+                <option value="consultoria">Preciso de consultoria</option>
+            </select>
+        </div>
+        
+        <div class="form-group full">
+            <label for="timeline" class="form-label" data-i18n="form.timeline">Prazo do Projeto</label>
+            <select id="timeline" name="timeline" class="form-input form-select">
+                <option value="">Selecione o prazo</option>
+                <option value="imediato">Início Imediato</option>
+                <option value="1mes">Dentro de 1 mês</option>
+                <option value="3meses">Dentro de 3 meses</option>
+                <option value="6meses">Dentro de 6 meses</option>
+                <option value="definir">A definir</option>
+            </select>
+        </div>
+        
+        <div class="form-group full">
+            <label for="message" class="form-label"><span data-i18n="form.message">Detalhes do Projeto</span> *</label>
+            <textarea id="message" name="message" class="form-input" rows="5" 
+                      placeholder="Descreva o seu projeto, objetivos, desafios atuais e qualquer informação relevante..." 
+                      required></textarea>
+        </div>
+        
+        <div class="form-group full">
+            <label class="checkbox-label">
+                <input type="checkbox" name="privacy" required>
+                <span data-i18n="form.privacy">Concordo com a Política de Privacidade e autorizo o contacto</span>
+            </label>
+        </div>
+    </div>
+    
+    <!-- CAMPOS OCULTOS DO FORMSPREE -->
+    <!-- Campo anti-spam invisível -->
+    <input type="text" name="_gotcha" style="display:none">
+    
+    <!-- Assunto customizado do email -->
+    <input type="hidden" name="_subject" value="🚀 Nova Oportunidade - PontoHub">
+    
+    <!-- Página de redirecionamento após envio (criar esta página) -->
+    <input type="hidden" name="_next" value="https://www.pontohub.com/obrigado">
+    
+    <!-- Idioma das mensagens de erro -->
+    <input type="hidden" name="_language" value="pt">
+    
+    <!-- Não usar captcha do Formspree (já tem checkbox de privacidade) -->
+    <input type="hidden" name="_captcha" value="false">
+    
+    <!-- Botão de envio -->
+    <button type="submit" class="form-submit" id="submit-button">
+        <span><i class="fas fa-paper-plane"></i> <span data-i18n="form.submit">Enviar Solicitação</span></span>
+    </button>
+            </form>
 
-            <form class="contact-form animate-in" action="#" method="POST">
+            <!-- SCRIPT PARA ENVIO AJAX (SEM REFRESH DA PÁGINA) -->
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('contact-form');
+                const submitButton = document.getElementById('submit-button');
+                const originalButtonHTML = submitButton.innerHTML;
+                
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validações extras (opcional)
+                    const phone = form.querySelector('#phone').value;
+                    const phoneRegex = /^(\+351|\+55)?[\d\s()-]+$/;
+                    
+                    if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
+                        alert('Por favor, insira um telefone válido');
+                        return false;
+                    }
+                    
+                    // Mudar estado do botão
+                    submitButton.innerHTML = '<span><i class="fas fa-spinner fa-spin"></i> Enviando...</span>';
+                    submitButton.disabled = true;
+                    
+                    // Coletar dados do formulário
+                    const formData = new FormData(form);
+                    
+                    // Enviar para Formspree
+                    fetch('https://formspree.io/f/xnnzldnv', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Sucesso - mostrar mensagem
+                            showSuccessMessage();
+                            
+                            // Limpar formulário
+                            form.reset();
+                            
+                            // Analytics - rastrear conversão
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'form_submit', {
+                                    'event_category': 'Contact',
+                                    'event_label': 'Contact Form',
+                                    'value': 1
+                                });
+                            }
+                            
+                            // Google Tag Manager
+                            if (typeof dataLayer !== 'undefined') {
+                                dataLayer.push({
+                                    'event': 'form_submit',
+                                    'form_name': 'contact',
+                                    'form_service': formData.get('service'),
+                                    'form_country': formData.get('country')
+                                });
+                            }
+                            
+                        } else {
+                            throw new Error('Erro no envio');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        showErrorMessage();
+                    })
+                    .finally(() => {
+                        // Restaurar botão
+                        submitButton.innerHTML = originalButtonHTML;
+                        submitButton.disabled = false;
+                    });
+                });
+                
+                // Função para mostrar mensagem de sucesso
+                function showSuccessMessage() {
+                    // Criar elemento de mensagem
+                    const successDiv = document.createElement('div');
+                    successDiv.className = 'form-success-message';
+                    successDiv.innerHTML = `
+                        <div style="background: #10b981; color: white; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+                            <i class="fas fa-check-circle" style="font-size: 24px; margin-bottom: 10px;"></i>
+                            <h4 style="margin: 10px 0;">Mensagem Enviada com Sucesso!</h4>
+                            <p>Obrigado pelo seu interesse. Entraremos em contacto em até 24 horas.</p>
+                        </div>
+                    `;
+                    
+                    // Inserir mensagem antes do formulário
+                    form.parentNode.insertBefore(successDiv, form);
+                    
+                    // Scroll para mensagem
+                    successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Remover mensagem após 10 segundos
+                    setTimeout(() => {
+                        successDiv.remove();
+                    }, 10000);
+                }
+                
+                // Função para mostrar mensagem de erro
+                function showErrorMessage() {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'form-error-message';
+                    errorDiv.innerHTML = `
+                        <div style="background: #ef4444; color: white; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+                            <i class="fas fa-exclamation-circle" style="font-size: 24px; margin-bottom: 10px;"></i>
+                            <h4 style="margin: 10px 0;">Erro ao Enviar</h4>
+                            <p>Por favor, tente novamente ou entre em contacto via WhatsApp: +351 963 487 687</p>
+                        </div>
+                    `;
+                    
+                    form.parentNode.insertBefore(errorDiv, form);
+                    errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    setTimeout(() => {
+                        errorDiv.remove();
+                    }, 10000);
+                }
+            });
+
+            // Formatar telefone enquanto digita (opcional)
+            document.getElementById('phone').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                
+                // Detectar se é Brasil ou Portugal
+                if (value.startsWith('55')) {
+                    // Formato Brasil: +55 (11) 98765-4321
+                    if (value.length > 13) value = value.slice(0, 13);
+                    value = value.replace(/^(\d{2})(\d{2})(\d{5})(\d{4}).*/, '+$1 ($2) $3-$4');
+                } else if (value.startsWith('351')) {
+                    // Formato Portugal: +351 912 345 678
+                    if (value.length > 12) value = value.slice(0, 12);
+                    value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{3}).*/, '+$1 $2 $3 $4');
+                }
+                
+                e.target.value = value;
+            });
+            </script>
+
+            <!-- CSS ADICIONAL PARA MELHORAR O FEEDBACK VISUAL -->
+            <style>
+            .form-submit:disabled {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+
+            .form-success-message,
+            .form-error-message {
+                animation: slideDown 0.3s ease-out;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .form-input:focus {
+                border-color: #0B4387;
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(11, 67, 135, 0.1);
+            }
+
+            .form-input.error {
+                border-color: #ef4444;
+            }
+
+            .checkbox-label {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                cursor: pointer;
+            }
+
+            .checkbox-label input[type="checkbox"] {
+                margin-top: 4px;
+            }
+            </style>
+
+            <!--<form class="contact-form animate-in" action="#" method="POST">
                 <h3 class="form-title" data-i18n="contact.form.title">Solicite um Orçamento</h3>
                 <p class="form-subtitle" data-i18n="contact.form.subtitle">Preencha o formulário e entraremos em contacto em até 24 horas.</p>
                 
@@ -375,7 +678,7 @@
                         <input type="text" id="name" name="name" class="form-input" required>
                     </div>
                     <div class="form-group">
-                        <label for="email" class="form-label"><span data-i18n="form.email">Email Corporativo</span> *</label>
+                        <label for="email" class="form-label"><span data-i18n="form.email">Email</span> *</label>
                         <input type="email" id="email" name="email" class="form-input" required>
                     </div>
                     <div class="form-group">
@@ -445,11 +748,11 @@
                 <button type="submit" class="form-submit">
                     <span><i class="fas fa-paper-plane"></i> <span data-i18n="form.submit">Enviar Solicitação</span></span>
                 </button>
-            </form>
+            </form>-->
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section 
     <section class="faq">
         <div class="section-header animate-in">
             <span class="section-label">FAQ</span>
@@ -504,14 +807,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- Map Section -->
     <section class="map-section">
         <div class="map-container">
             <div class="map-overlay">
                 <h3>Encontre-nos</h3>
-                <p>Lisboa, Portugal | São Paulo, Brasil</p>
+                <p>Lisboa, Portugal | Rio de Janeiro, Brasil</p>
             </div>
             <!-- Placeholder para mapa real -->
             <div class="map-placeholder">
@@ -587,7 +890,7 @@
                     <div class="footer-contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <a href="mailto:tantunes@pontohub.com">tantunes@pontohub.com</a>
+                            <a href="mailto:info@pontohub.com">info@pontohub.com</a>
                         </div>
                     </div>
                     
@@ -595,16 +898,18 @@
                     <div class="footer-contact-item">
                         <i class="fab fa-whatsapp"></i>
                         <div>
-                            <a href="https://wa.me/351963487687">+351 963 487 687</a>
+                            <a href="https://wa.me/351963487687">+351 963 487 687</a><br>
+                            <a href="https://wa.me/5521971276907">+55 21 971276907</a>
                         </div>
                     </div>
+                    
                     
                     <!-- Localizações -->
                     <div class="footer-contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <p><strong>Lisboa, Portugal</strong></p>
-                            <p><strong>São Paulo, Brasil</strong></p>
+                            <p><strong>Rio de Janeiro, Brasil</strong></p>
                         </div>
                     </div>
                     
@@ -616,7 +921,7 @@
        aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
     </a>
-    <a href="https://github.com/pontohub" 
+    <!--<a href="https://github.com/pontohub" 
        target="_blank" 
        class="footer-social-link" 
        aria-label="GitHub">
@@ -633,7 +938,7 @@
        class="footer-social-link" 
        aria-label="Facebook">
         <i class="fab fa-facebook"></i>
-    </a>
+    </a>-->
 </div>
                 </div>
             </div>

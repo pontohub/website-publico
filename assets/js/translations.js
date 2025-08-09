@@ -52,7 +52,7 @@ const translations = {
 
         // Contact form na página de serviços
         'services.contact.label': 'Vamos Conversar',
-        'services.contact.title': 'Interessado em algum serviço?',
+        'services.contact.title': 'Precisa de um orçamento?',
         'services.contact.subtitle': 'Conte-nos sobre seu projeto e descubra como podemos ajudar a transformar suas ideias em realidade.',
                 
         // Values
@@ -141,7 +141,7 @@ const translations = {
         
         // Form Fields
         'form.name': 'Nome Completo',
-        'form.email': 'Email Corporativo',
+        'form.email': 'Email',
         'form.company': 'Empresa',
         'form.phone': 'WhatsApp/Telefone',
         'form.country': 'País',
@@ -154,8 +154,8 @@ const translations = {
         
         // CTA
         'cta.title': 'Pronto para transformar seu negócio?',
-        'cta.subtitle': 'Vamos criar juntos soluções tecnológicas que levarão sua empresa ao próximo nível de sucesso.',
-        'cta.start': 'Começar Agora',
+        'cta.subtitle': 'Saiba como a PontoHub pode melhorar a eficiência, cortar custos e acelerar o crescimento da sua empresa.',
+        'cta.start': 'Solicitar Proposta',
         'cta.whatsapp': 'Falar no WhatsApp',
         
         // Footer
@@ -296,8 +296,8 @@ const translations = {
         'service.cta': 'Solicitar Orçamento →',
 
         // Contact form na página de serviços
-        'services.contact.label': 'Vamos Conversar',
-        'services.contact.title': 'Interessado em algum serviço?',
+        'services.contact.label': 'Fale connosco',
+        'services.contact.title': 'Precisa de um orçamento?',
         'services.contact.subtitle': 'Conte-nos sobre o seu projeto e descubra como podemos ajudar a transformar as suas ideias em realidade.',
         
         // Values
@@ -386,7 +386,7 @@ const translations = {
         
         // Form Fields
         'form.name': 'Nome Completo',
-        'form.email': 'Email Corporativo',
+        'form.email': 'Email',
         'form.company': 'Empresa',
         'form.phone': 'WhatsApp/Telefone',
         'form.country': 'País',
@@ -399,9 +399,9 @@ const translations = {
         
         // CTA
         'cta.title': 'Pronto para transformar o seu negócio?',
-        'cta.subtitle': 'Vamos criar juntos soluções tecnológicas que levarão a sua empresa ao próximo nível de sucesso.',
-        'cta.start': 'Começar Agora',
-        'cta.whatsapp': 'Falar no WhatsApp',
+        'cta.subtitle': 'Saiba como a PontoHub pode melhorar a eficiência, cortar custos e acelerar o crescimento da sua empresa.',
+        'cta.start': 'Solicitar Proposta',
+        'cta.whatsapp': 'Contactar agora',
         
         // Footer
         'footer.description': 'A transformar o futuro através da tecnologia. Desenvolvimento de software, IA, cloud computing e análise de dados para empresas que querem liderar.',
