@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Consent Mode do Google  -->
+    <!-- ========================================= -->
+    <!-- 1. CONSENT MODE & GTM (KEEP AS IS)       -->
+    <!-- ========================================= -->
     <script>
-        // Configuração de consentimento padrão
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        
-        // Define consentimento padrão como negado
         gtag('consent', 'default', {
             'analytics_storage': 'denied',
             'ad_storage': 'denied',
@@ -20,78 +19,253 @@
         });
     </script>
 
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KRZ4MGRX');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Favicon  -->
+    
+    <!-- ========================================= -->
+    <!-- 2. PRECONNECTS (ADD AFTER GTM)           -->
+    <!-- ========================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- ========================================= -->
+    <!-- 3. CRITICAL CSS INLINE (ULTRA-MINIMAL)   -->
+    <!-- ========================================= -->
+    <style>
+        /* Reset & Box Model */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Essential Variables */
+        :root {
+            --primary: #0B4387;
+            --white: #FFFFFF;
+            --dark-blue: #01012C;
+            --gray-100: #F5F5F5;
+        }
+        
+        /* Body */
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-blue);
+            background: var(--white);
+        }
+        
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            background: white;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Logo */
+        .logo-img {
+            height: 45px;
+            width: auto;
+            display: block;
+        }
+        
+        /* Menu */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .mobile-toggle { display: none; }
+        
+        /* Hero */
+        .hero {
+            min-height: calc(100vh - 80px);
+            margin-top: 80px;
+            padding: 80px 0;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Headings */
+        h1, .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.1;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            line-height: 1.2;
+        }
+        
+        /* Links */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: translateY(100%);
+            z-index: 9999;
+        }
+        
+        /* Mobile */
+        @media (max-width: 968px) {
+            .navbar { height: 60px; }
+            .hero { 
+                margin-top: 60px; 
+                min-height: calc(100vh - 60px);
+            }
+            .logo-img { height: 30px; }
+            .nav-menu {
+                position: fixed;
+                right: -100%;
+                top: 0;
+                width: 80%;
+                height: 100vh;
+                background: white;
+            }
+            .mobile-toggle { 
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+    </style>
+    
+    <!-- ========================================= -->
+    <!-- 4. FAVICON                                -->
+    <!-- ========================================= -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon_pontohub.svg">
     
-    <!-- SEO Meta Tags Multi-language -->
+    <!-- ========================================= -->
+    <!-- 5. SEO META TAGS (PORTFOLIO EN-GB)       -->
+    <!-- ========================================= -->
     <meta name="description" content="PontoHub Portfolio - Success stories in digital transformation. Integration, AI, development and data analytics projects that generated real results.">
     <meta name="keywords" content="portfolio, success stories, projects, digital transformation, systems integration, software development">
     <meta name="author" content="PontoHub">
     <meta name="robots" content="index, follow">
     
-    <!-- Canonical URL -->
+    <!-- Canonical (PORTFOLIO EN-GB) -->
     <link rel="canonical" href="https://www.pontohub.com/en-gb/portfolio">
     
-    <!-- Hreflang Tags -->
+    <!-- Hreflang (PORTFOLIO) -->
     <link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/portfolio">
     <link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/portfolio">
     <link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/portfolio">
     <link rel="alternate" hreflang="x-default" href="https://www.pontohub.com/portfolio">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph (PORTFOLIO EN-GB) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pontohub.com/en-gb/portfolio">
     <meta property="og:title" content="Portfolio - PontoHub | Success Stories and Projects">
     <meta property="og:description" content="Success stories in digital transformation. Projects that generated real and measurable results.">
     <meta property="og:image" content="https://www.pontohub.com/images/og-portfolio.jpg">
-    <meta property="og:locale" content="en_GB">
-    <meta property="og:locale:alternate" content="pt_BR">
-    <meta property="og:locale:alternate" content="pt_PT">
     
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    
+    <!-- ========================================= -->
+    <!-- 6. TITLE (PORTFOLIO EN-GB)               -->
+    <!-- ========================================= -->
     <title>Portfolio - PontoHub | Success Stories and Projects</title>
     
-    <!-- Preconnect to external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-     <!-- Preload de recursos críticos -->
-    <link rel="preload" href="/assets/css/global.css?v=0.0.1" as="style">
-    <link rel="preload" href="/assets/images/pontohub-logo.svg" as="image">
-
-    <!-- DNS Prefetch para recursos futuros -->
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    
-    <!-- Fonts with display swap for better performance -->
+    <!-- ========================================= -->
+    <!-- 7. OPTIMIZED FONTS (INTER ONLY)          -->
+    <!-- ========================================= -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
-   
-    <!-- CSS with correct paths -->
-    <link rel="preload" href="../assets/css/global.css?v=0.0.1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="../assets/css/global.css?v=0.0.1"></noscript>
-    <link rel="stylesheet" href="../assets/css/portfolio.css?v=0.0.1">
-    <link rel="stylesheet" href="/assets/css/cookie-banner.css?v=0.0.1">
+    <!-- ========================================= -->
+    <!-- 8. FONT AWESOME (LAZY LOAD)              -->
+    <!-- ========================================= -->
+    <script>
+        // Load Font Awesome only when needed
+        let faLoaded = false;
+        function loadFontAwesome() {
+            if (!faLoaded) {
+                faLoaded = true;
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+                document.head.appendChild(link);
+            }
+        }
+        // Load on first interaction
+        ['mousemove', 'touchstart', 'scroll'].forEach(function(e) {
+            window.addEventListener(e, loadFontAwesome, {once: true, passive: true});
+        });
+        // Or after 3 seconds
+        setTimeout(loadFontAwesome, 3000);
+    </script>
+    
+    <!-- ========================================= -->
+    <!-- 9. EXTERNAL CSS - ALL ASYNC              -->
+    <!-- ========================================= -->
+    
+    <!-- Critical CSS (complete, cacheable) -->
+    <link rel="preload" href="/assets/css/critical.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/critical.css?v=2.0"></noscript>
+    
+    <!-- Global CSS (non-critical styles) -->
+    <link rel="preload" href="/assets/css/global.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2.0"></noscript>
+    
+    <!-- Portfolio specific CSS -->
+    <link rel="preload" href="/assets/css/portfolio.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/portfolio.css?v=2.0"></noscript>
+    
+    <!-- Cookie Banner CSS -->
+    <link rel="preload" href="/assets/css/cookie-banner.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/cookie-banner.css?v=2.0"></noscript>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
+    <!-- ========================================= -->
+    <!-- GTM NOSCRIPT - ALWAYS FIRST IN BODY      -->
+    <!-- ========================================= -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRZ4MGRX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Navigation -->
+    
+    <!-- ========================================= -->
+    <!-- NAVBAR WITH SIZED LOGO                   -->
+    <!-- ========================================= -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="/en-gb/" class="nav-logo">
-                <img src="../assets/images/pontohub-logo.svg" alt="PontoHub" class="logo-img" width="180" height="45">
+                <!-- IMPORTANT: width and height to prevent CLS -->
+                <img src="/assets/images/pontohub-logo.svg" 
+                     alt="PontoHub" 
+                     class="logo-img"
+                     width="180"
+                     height="45">
             </a>
             <ul class="nav-menu">
                 <li><a href="/en-gb/" class="nav-link" data-i18n="nav.home">Home</a></li>
@@ -99,7 +273,6 @@
                 <li><a href="/en-gb/about.html" class="nav-link" data-i18n="nav.about">About</a></li>
                 <li><a href="/en-gb/partners.html" class="nav-link" data-i18n="nav.partners">Partners</a></li>
                 <li><a href="/en-gb/portfolio.html" class="nav-link active" data-i18n="nav.portfolio">Portfolio</a></li>
-                <!-- Language Selector will be inserted here by JavaScript -->
                 <li><a href="/en-gb/contact.html" class="nav-cta" data-i18n="nav.contact">Start Project</a></li>
             </ul>
             <div class="mobile-toggle">
