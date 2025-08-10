@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ========================================= -->
-    <!-- 1. CONSENT MODE & GTM (KEEP AS IS)       -->
+    <!-- 1. CONSENT MODE E GTM (MANTER COMO ESTÁ) -->
     <!-- ========================================= -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -26,19 +26,19 @@
     })(window,document,'script','dataLayer','GTM-KRZ4MGRX');</script>
     
     <!-- ========================================= -->
-    <!-- 2. PRECONNECTS (ADD AFTER GTM)           -->
+    <!-- 2. PRECONNECTS (ADICIONAR APÓS GTM)      -->
     <!-- ========================================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- ========================================= -->
-    <!-- 3. CRITICAL CSS INLINE (ULTRA-MINIMAL)   -->
+    <!-- 3. CSS CRÍTICO INLINE (ULTRA-MÍNIMO)     -->
     <!-- ========================================= -->
     <style>
-        /* Reset & Box Model */
+        /* Reset e Box Model */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Essential Variables */
+        /* Variáveis Essenciais */
         :root {
             --primary: #0B4387;
             --white: #FFFFFF;
@@ -104,14 +104,14 @@
             padding: 0 20px;
         }
         
-        /* Images */
+        /* Imagens */
         img {
             max-width: 100%;
             height: auto;
             display: block;
         }
         
-        /* Headings */
+        /* Títulos */
         h1, .hero-title {
             font-size: clamp(2rem, 5vw, 3.5rem);
             line-height: 1.1;
@@ -168,39 +168,39 @@
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon_pontohub.svg">
     
     <!-- ========================================= -->
-    <!-- 5. SEO META TAGS (ABOUT EN-GB)           -->
+    <!-- 5. SEO META TAGS (SOBRE EN-GB)            -->
     <!-- ========================================= -->
-    <meta name="description" content="About PontoHub - Learn about our story, mission, vision, values and the team that transforms ideas into innovative technology solutions.">
+    <meta name="description" content="Learn about PontoHub's story, our mission, vision and values. Discover the team that develops technological solutions to transform companies in Europe.">
     <meta name="keywords" content="about pontohub, story, mission, vision, values, team, digital transformation">
     <meta name="author" content="PontoHub">
     <meta name="robots" content="index, follow">
     
-    <!-- Canonical (ABOUT EN-GB) -->
+    <!-- Canonical (SOBRE EN-GB) -->
     <link rel="canonical" href="https://www.pontohub.com/en-gb/about">
     
-    <!-- Hreflang (ABOUT) -->
+    <!-- Hreflang (SOBRE) -->
     <link rel="alternate" hreflang="pt-BR" href="https://www.pontohub.com/pt-br/sobre">
     <link rel="alternate" hreflang="pt-PT" href="https://www.pontohub.com/pt-pt/sobre">
     <link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/about">
-    <link rel="alternate" hreflang="x-default" href="https://www.pontohub.com/about">
+    <link rel="alternate" hreflang="x-default" href="https://www.pontohub.com/sobre">
     
-    <!-- Open Graph (ABOUT EN-GB) -->
+    <!-- Open Graph (SOBRE EN-GB) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pontohub.com/en-gb/about">
-    <meta property="og:title" content="About Us - PontoHub | Our Story and Team">
-    <meta property="og:description" content="Learn about our story, mission, vision, values and the team that transforms ideas into innovative technology solutions.">
+    <meta property="og:title" content="About PontoHub | Story, Mission and Team">
+    <meta property="og:description" content="Learn about PontoHub's story, our mission, vision and values. Discover the team that develops technological solutions to transform companies in Europe.">
     <meta property="og:image" content="https://www.pontohub.com/images/og-about.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     
     <!-- ========================================= -->
-    <!-- 6. TITLE (ABOUT EN-GB)                   -->
+    <!-- 6. TÍTULO (SOBRE EN-GB)                   -->
     <!-- ========================================= -->
-    <title>About Us - PontoHub | Our Story and Team</title>
+    <title>About PontoHub | Story, Mission and Team</title>
     
     <!-- ========================================= -->
-    <!-- 7. OPTIMIZED FONTS (INTER ONLY)          -->
+    <!-- 7. FONTES OTIMIZADAS (SÓ INTER)          -->
     <!-- ========================================= -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -208,7 +208,7 @@
     <!-- 8. FONT AWESOME (LAZY LOAD)              -->
     <!-- ========================================= -->
     <script>
-        // Load Font Awesome only when needed
+        // Carrega Font Awesome apenas quando necessário
         let faLoaded = false;
         function loadFontAwesome() {
             if (!faLoaded) {
@@ -219,27 +219,27 @@
                 document.head.appendChild(link);
             }
         }
-        // Load on first interaction
+        // Carrega ao primeiro movimento
         ['mousemove', 'touchstart', 'scroll'].forEach(function(e) {
             window.addEventListener(e, loadFontAwesome, {once: true, passive: true});
         });
-        // Or after 3 seconds
+        // Ou após 3 segundos
         setTimeout(loadFontAwesome, 3000);
     </script>
     
     <!-- ========================================= -->
-    <!-- 9. EXTERNAL CSS - ALL ASYNC              -->
+    <!-- 9. CSS EXTERNAL - TODOS ASYNC             -->
     <!-- ========================================= -->
     
-    <!-- Critical CSS (complete, cacheable) -->
+    <!-- Critical CSS (completo, cacheável) -->
     <link rel="preload" href="/assets/css/critical.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/critical.css?v=2.0"></noscript>
     
-    <!-- Global CSS (non-critical styles) -->
+    <!-- Global CSS (estilos não-críticos) -->
     <link rel="preload" href="/assets/css/global.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2.0"></noscript>
     
-    <!-- About specific CSS -->
+    <!-- CSS específico de Sobre -->
     <link rel="preload" href="/assets/css/sobre.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/sobre.css?v=2.0"></noscript>
     
@@ -249,18 +249,18 @@
 </head>
 <body>
     <!-- ========================================= -->
-    <!-- GTM NOSCRIPT - ALWAYS FIRST IN BODY      -->
+    <!-- GTM NOSCRIPT - SEMPRE PRIMEIRO NO BODY   -->
     <!-- ========================================= -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRZ4MGRX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <!-- ========================================= -->
-    <!-- NAVBAR WITH SIZED LOGO                   -->
+    <!-- NAVBAR COM LOGO DIMENSIONADO              -->
     <!-- ========================================= -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="/en-gb/" class="nav-logo">
-                <!-- IMPORTANT: width and height to prevent CLS -->
+                <!-- IMPORTANTE: width e height para evitar CLS -->
                 <img src="/assets/images/pontohub-logo.svg" 
                      alt="PontoHub" 
                      class="logo-img"
@@ -289,13 +289,13 @@
             <div class="hero-content">
                 <span class="hero-badge" data-i18n="about.label">About Us</span>
                 <h1 class="hero-title">
-                    <span data-i18n="hero.title">Connecting ideas,</span> 
-                    <span class="text-gradient" data-i18n="hero.title.gradient">transforming businesses</span>
+                    <span data-i18n="hero.title">Technology solutions</span> 
+                    <span class="text-gradient" data-i18n="hero.title.gradient">that drive growth</span>
                 </h1>
-                <p class="hero-subtitle" data-i18n="about.hero.subtitle">
+                <!--<p class="hero-subtitle" data-i18n="about.hero.subtitle">
                     Since 2018, we have been transforming technological challenges 
                     into growth opportunities for companies in Brazil and Portugal.
-                </p>
+                </p>-->
             </div>
         </div>
     </section>
@@ -305,19 +305,14 @@
         <div class="about-container">
             <div class="about-content animate-in">
                 <span class="section-label" data-i18n="about.history.label">Our Story</span>
-                <h2 class="section-title" data-i18n="about.title">More than technology, we are strategic partners</h2>
+                <h2 class="section-title" data-i18n="about.title">More than technology, a strategic partnership</h2>
                 <p class="about-text" data-i18n="about.description">
                     PontoHub is more than a technology company. We are strategic 
-                    partners who combine world-class technical expertise with 
-                    deep business knowledge. With a presence in Brazil and Portugal, 
-                    we create solutions that not only solve problems but open new 
-                    growth opportunities.
+                    partners who combine solid technical experience with business knowledge. 
+                    With a presence in Brazil and Portugal, we develop solutions that solve challenges and create new growth opportunities for companies.
                 </p>
                 <p class="about-text" data-i18n="about.journey">
-                    Our journey began in 2018 with the vision to push the boundaries 
-                    of technological innovation. Since then, we have helped companies 
-                    from various sectors to digitally transform themselves, always 
-                    focusing on measurable results and real business impact.
+                    Since 2018, we have helped organisations from different sectors modernise processes and adopt innovative technologies, always focusing on concrete results and positive business impact.
                 </p>
             </div>
             <div class="about-visual animate-in">
@@ -336,7 +331,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-value">200+</div>
-                        <div class="stat-desc" data-i18n="about.stats.satisfaction">Satisfaction</div>
+                        <div class="stat-desc" data-i18n="about.stats.satisfaction">Integrations</div>
                     </div>
                 </div>
             </div>
@@ -353,8 +348,7 @@
                     </div>
                     <div class="mvv-content">
                         <h3 data-i18n="about.mission">Mission</h3>
-                        <p data-i18n="about.mission.text">To push the boundaries of technological innovation to create 
-                        solutions that transform businesses and impact lives.</p>
+                        <p data-i18n="about.mission.text">To develop customised technological solutions that increase efficiency, reduce costs and drive sustainable business growth.</p>
                     </div>
                 </div>
                 <div class="mvv-card animate-in">
@@ -363,8 +357,7 @@
                     </div>
                     <div class="mvv-content">
                         <h3 data-i18n="about.vision">Vision</h3>
-                        <p data-i18n="about.vision.text">To be a global reference in digital transformation, recognised 
-                        for excellence and ability to create the future.</p>
+                        <p data-i18n="about.vision.text">To be recognised as a trusted strategic partner in companies' digital transformation.</p>
                     </div>
                 </div>
                 <div class="mvv-card animate-in">
@@ -373,8 +366,7 @@
                     </div>
                     <div class="mvv-content">
                         <h3 data-i18n="about.values">Values</h3>
-                        <p data-i18n="about.values.text">Constant innovation, absolute integrity, technical excellence 
-                        and obsessive focus on client success.</p>
+                        <p data-i18n="about.values.text">Innovation, Transparency, Quality and Partnership.</p>
                     </div>
                 </div>
             </div>
@@ -391,29 +383,29 @@
                     <div class="milestone-item">
                         <div class="milestone-year">2018</div>
                         <h4 class="milestone-title" data-i18n="milestone.2018.title">Foundation</h4>
-                        <p class="milestone-description" data-i18n="milestone.2018.desc">Company opening in Brazil</p>
+                        <p class="milestone-description" data-i18n="milestone.2018.desc">Focus on software development and systems integration</p>
                     </div>
                     <div class="milestone-item">
                         <div class="milestone-year">2020</div>
-                        <h4 class="milestone-title" data-i18n="milestone.2020.title">Consolidation</h4>
-                        <p class="milestone-description" data-i18n="milestone.2020.desc">Strategic project development for Brazilian retail</p>
+                        <h4 class="milestone-title" data-i18n="milestone.2020.title">New services</h4>
+                        <p class="milestone-description" data-i18n="milestone.2020.desc">Cloud, cybersecurity and data analytics</p>
                     </div>
                     <div class="milestone-item">
                         <div class="milestone-year">2023</div>
-                        <h4 class="milestone-title" data-i18n="milestone.2023.title">New Partnerships</h4>
-                        <p class="milestone-description" data-i18n="milestone.2023.desc">Consolidation of iPaaS platform partnerships</p>
+                        <h4 class="milestone-title" data-i18n="milestone.2023.title">International expansion</h4>
+                        <p class="milestone-description" data-i18n="milestone.2023.desc">Expanding presence to the European market and strengthening international operations.</p>
                     </div>
                     <div class="milestone-item">
                         <div class="milestone-year">2024</div>
-                        <h4 class="milestone-title" data-i18n="milestone.2024.title">Expansion</h4>
-                        <p class="milestone-description" data-i18n="milestone.2024.desc">First branch opening in Portugal</p>
+                        <h4 class="milestone-title" data-i18n="milestone.2024.title">AI Services</h4>
+                        <p class="milestone-description" data-i18n="milestone.2024.desc">Focus on intelligent automation and predictive analytics for companies in different sectors.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Team Section 
     <section id="team" class="team">
         <div class="section-header animate-in">
             <span class="section-label" data-i18n="team.label">Our Team</span>
@@ -497,15 +489,15 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA Section -->
     <section class="cta">
         <div class="cta-content animate-in">
             <h2 class="cta-title" data-i18n="about.cta.title">Meet our technology partners</h2>
             <p class="cta-subtitle" data-i18n="about.cta.subtitle">
-                We work with leading platforms and technologies to 
-                ensure the best solutions.
+                We work with leading platforms and technologies on the market 
+                to ensure the best solutions.
             </p>
             <div class="cta-buttons">
                 <a href="/en-gb/partners.html" class="cta-btn cta-primary">
@@ -522,6 +514,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
+                
                 <!-- Coluna 1: Serviços -->
                 <div class="footer-column">
                     <h3 data-i18n="footer.services">Services</h3>
@@ -540,6 +533,7 @@
                         </a></li>
                     </ul>
                 </div>
+                
                 <!-- Coluna 2: Empresa -->
                 <div class="footer-column">
                     <h3 data-i18n="footer.company">Company</h3>
@@ -558,21 +552,23 @@
                         </a></li>
                     </ul>
                 </div>
+                
                 <!-- Coluna 3: Legal -->
                 <div class="footer-column">
                     <h4>Legal</h4>
                     <ul class="footer-links">
                         <li><a href="/en-gb/privacy-policy.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> Política de Privacidade
+                            <i class="fas fa-chevron-right"></i> Privacy Policy
                         </a></li>
                         <li><a href="/en-gb/terms-conditions.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> Termos e Condições
+                            <i class="fas fa-chevron-right"></i> Terms and Conditions
                         </a></li>
                         <li><a href="/en-gb/cookies-policy.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> Política de Cookies
+                            <i class="fas fa-chevron-right"></i> Cookies Policy
                         </a></li>
                     </ul>
                 </div>
+                
                 <!-- Coluna 4: Contatos -->
                 <div class="footer-column footer-contact">
                     <h3 data-i18n="footer.contact">Contacts</h3>
@@ -598,8 +594,8 @@
                     <div class="footer-contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <p><strong>Lisboa, Portugal</strong></p>
-                            <p><strong>Rio de Janeiro, Brasil</strong></p>
+                            <p><strong>Lisbon, Portugal</strong></p>
+                            <p><strong>Rio de Janeiro, Brazil</strong></p>
                         </div>
                     </div>
                     
@@ -630,8 +626,9 @@
         <i class="fab fa-facebook"></i>
     </a>-->
 </div>
-                </div>    
+                </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 PontoHub. <span data-i18n="footer.rights">All rights reserved. | Transforming the future, today.</span></p>
             </div>
@@ -764,71 +761,147 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript with correct paths -->
+    <!-- JavaScript com caminhos corretos -->
     <script src="../assets/js/translations.js?v=0.0.1"></script>
     <script src="../assets/js/language.js?v=0.0.1"></script>
     <script src="../assets/js/main.js?v=0.0.1"></script>
     <script src="../assets/js/sobre.js?v=0.0.1"></script>
     <script src="/assets/js/cookie-manager.js?v=0.0.1"></script>
-    
+
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "mainEntity": {
-            "@type": "Organization",
-            "name": "PontoHub",
-            "url": "https://www.pontohub.com",
-            "logo": "https://www.pontohub.com/logo.png",
-            "description": "Digital transformation company with expertise in software development, AI and cloud computing",
-            "foundingDate": "2018",
-            "founders": [
-                {
-                    "@type": "Person",
-                    "name": "Thiago Antunes",
-                    "jobTitle": "CEO & Founder"
-                }
-            ],
-            "employees": [
-                {
-                    "@type": "Person",
-                    "name": "Ana Silva",
-                    "jobTitle": "CTO"
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://www.pontohub.com/#organization",
+                "name": "PontoHub",
+                "alternateName": "Ponto Hub",
+                "url": "https://www.pontohub.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.pontohub.com/assets/images/pontohub-logo.svg",
+                    "width": 600,
+                    "height": 60,
+                    "encodingFormat": "image/svg+xml"
                 },
-                {
-                    "@type": "Person",
-                    "name": "Rafael Costa",
-                    "jobTitle": "Head of AI"
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://www.pontohub.com/images/og-image.jpg",
+                    "width": 1200,
+                    "height": 630
                 },
-                {
-                    "@type": "Person",
-                    "name": "Marina Oliveira",
-                    "jobTitle": "Lead UX Designer"
-                }
-            ],
-            "location": [
-                {
-                    "@type": "Place",
-                    "name": "Lisbon Office",
-                    "address": {
+                "description": "Connecting ideas, transforming businesses. Leaders in digital transformation with software solutions, AI, Cloud Computing and systems integration.",
+                "foundingDate": "2018",
+                "founders": [
+                    {
+                        "@type": "Person",
+                        "name": "Thiago Antunes"
+                    }
+                ],
+                "address": [
+                    {
                         "@type": "PostalAddress",
                         "addressLocality": "Lisbon",
-                        "addressCountry": "PT"
-                    }
-                },
-                {
-                    "@type": "Place",
-                    "name": "São Paulo Office",
-                    "address": {
+                        "addressCountry": "PT",
+                        "streetAddress": "Rua do Centro Cultural 5, 2º Piso, Sala 10"
+                    },
+                    {
                         "@type": "PostalAddress",
-                        "addressLocality": "São Paulo",
-                        "addressRegion": "SP",
-                        "addressCountry": "BR"
+                        "addressLocality": "Rio de Janeiro",
+                        "addressRegion": "RJ",
+                        "addressCountry": "BR",
+                        "streetAddress": "Estrada do Galeão 1261"
                     }
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+351-963-487-687",
+                    "contactType": "customer service",
+                    "email": "info@pontohub.com",
+                    "availableLanguage": ["Portuguese", "English"],
+                    "areaServed": ["PT", "BR", "GB"]
+                },
+                "sameAs": [
+                    "https://www.linkedin.com/company/pontohub",
+                    "https://github.com/pontohub",
+                    "https://www.instagram.com/ponto.hub",
+                    "https://www.facebook.com/pontohub"
+                ],
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingCount": "47"
                 }
-            ]
-        }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://www.pontohub.com/#website",
+                "url": "https://www.pontohub.com",
+                "name": "PontoHub",
+                "description": "Digital transformation with software solutions, AI and Cloud Computing",
+                "publisher": {
+                    "@id": "https://www.pontohub.com/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://www.pontohub.com/search?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                },
+                "inLanguage": ["pt-PT", "pt-BR", "en-GB"]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://www.pontohub.com/en-gb/about/#webpage",
+                "url": "https://www.pontohub.com/en-gb/about",
+                "name": "About PontoHub | Story, Mission and Team",
+                "isPartOf": {
+                    "@id": "https://www.pontohub.com/#website"
+                },
+                "about": {
+                    "@id": "https://www.pontohub.com/#organization"
+                },
+                "datePublished": "2018-01-01",
+                "dateModified": "2025-01-01",
+                "description": "Learn about PontoHub's story, our mission, vision and values. Discover the team that develops technological solutions to transform companies in Europe.",
+                "breadcrumb": {
+                    "@id": "https://www.pontohub.com/en-gb/about/#breadcrumb"
+                },
+                "inLanguage": "en-GB",
+                "potentialAction": [
+                    {
+                        "@type": "ReadAction",
+                        "target": ["https://www.pontohub.com/en-gb/about"]
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.pontohub.com/en-gb/about/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.pontohub.com/en-gb/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "About",
+                        "item": "https://www.pontohub.com/en-gb/about"
+                    }
+                ]
+            }
+        ]
     }
     </script>
+
 </body>
+</html>

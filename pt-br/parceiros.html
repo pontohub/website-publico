@@ -91,7 +91,7 @@
         .mobile-toggle { display: none; }
         
         /* Hero */
-        .hero, .page-hero {
+        .hero {
             min-height: calc(100vh - 80px);
             margin-top: 80px;
             padding: 80px 0;
@@ -138,10 +138,26 @@
             z-index: 9999;
         }
         
+        /* FIX DE SOBREPOSIÇÃO - APENAS ISSO */
+        .tech-stack {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tech-partners {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-header {
+            position: relative;
+            z-index: 1;
+        }
+        
         /* Mobile */
         @media (max-width: 968px) {
             .navbar { height: 60px; }
-            .hero, .page-hero { 
+            .hero { 
                 margin-top: 60px; 
                 min-height: calc(100vh - 60px);
             }
@@ -163,19 +179,19 @@
     </style>
     
     <!-- ========================================= -->
-    <!-- 4. FAVICON (CAMINHO ABSOLUTO)            -->
+    <!-- 4. FAVICON                                -->
     <!-- ========================================= -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon_pontohub.svg">
     
     <!-- ========================================= -->
-    <!-- 5. SEO META TAGS (ESPECÍFICO PARCEIROS)  -->
+    <!-- 5. SEO META TAGS (PARCEIROS PT-BR)        -->
     <!-- ========================================= -->
-    <meta name="description" content="Parceiros PontoHub - Tecnologias e plataformas que utilizamos para criar soluções inovadoras. AWS, Azure, Google Cloud, SAP, Salesforce e mais.">
-    <meta name="keywords" content="parceiros tecnológicos, aws, azure, google cloud, sap, salesforce, tecnologias, plataformas">
+    <meta name="description" content="Conheça os parceiros tecnológicos e a stack da PontoHub: AWS, Azure, Google Cloud, SAP, Salesforce, IA, DevOps, Skyone, Mulesoft e muito mais.">
+    <meta name="keywords" content="parceiros tecnológicos, aws, azure, google cloud, sap, salesforce, mulesoft, n8n, skyone solutions, integrações, tecnologias, plataformas">
     <meta name="author" content="PontoHub">
     <meta name="robots" content="index, follow">
     
-    <!-- Canonical (PARCEIROS) -->
+    <!-- Canonical (PARCEIROS PT-BR) -->
     <link rel="canonical" href="https://www.pontohub.com/pt-br/parceiros">
     
     <!-- Hreflang (PARCEIROS) -->
@@ -184,20 +200,20 @@
     <link rel="alternate" hreflang="en-GB" href="https://www.pontohub.com/en-gb/partners">
     <link rel="alternate" hreflang="x-default" href="https://www.pontohub.com/parceiros">
     
-    <!-- Open Graph (PARCEIROS) -->
+    <!-- Open Graph (PARCEIROS PT-BR) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pontohub.com/pt-br/parceiros">
-    <meta property="og:title" content="Parceiros Tecnológicos - PontoHub | Tecnologias de Ponta">
-    <meta property="og:description" content="Parceiros e tecnologias que utilizamos para criar soluções inovadoras e escaláveis.">
+    <meta property="og:title" content="PontoHub | Parceiros e Tecnologias que Impulsionam Inovação">
+    <meta property="og:description" content="Conheça os parceiros tecnológicos e a stack da PontoHub: AWS, Azure, Google Cloud, SAP, Salesforce, IA, DevOps, Skyone, Mulesoft e muito mais.">
     <meta property="og:image" content="https://www.pontohub.com/images/og-partners.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     
     <!-- ========================================= -->
-    <!-- 6. TÍTULO (PARCEIROS)                     -->
+    <!-- 6. TÍTULO (PARCEIROS PT-BR)               -->
     <!-- ========================================= -->
-    <title>Parceiros Tecnológicos - PontoHub | Tecnologias de Ponta</title>
+    <title>PontoHub | Parceiros e Tecnologias que Impulsionam Inovação</title>
     
     <!-- ========================================= -->
     <!-- 7. FONTES OTIMIZADAS (SÓ INTER)          -->
@@ -228,22 +244,22 @@
     </script>
     
     <!-- ========================================= -->
-    <!-- 9. CSS EXTERNAL - TODOS ABSOLUTOS         -->
+    <!-- 9. CSS EXTERNAL - TODOS ASYNC             -->
     <!-- ========================================= -->
     
-    <!-- Critical CSS (CAMINHO ABSOLUTO) -->
+    <!-- Critical CSS (completo, cacheável) -->
     <link rel="preload" href="/assets/css/critical.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/critical.css?v=2.0"></noscript>
     
-    <!-- Global CSS (CAMINHO ABSOLUTO) -->
+    <!-- Global CSS (estilos não-críticos) -->
     <link rel="preload" href="/assets/css/global.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2.0"></noscript>
     
-    <!-- CSS específico PARCEIROS (CAMINHO ABSOLUTO) -->
+    <!-- CSS específico de Parceiros -->
     <link rel="preload" href="/assets/css/parceiros.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/parceiros.css?v=2.0"></noscript>
     
-    <!-- Cookie Banner CSS (CAMINHO ABSOLUTO) -->
+    <!-- Cookie Banner CSS -->
     <link rel="preload" href="/assets/css/cookie-banner.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/cookie-banner.css?v=2.0"></noscript>
 </head>
@@ -260,7 +276,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="/pt-br/" class="nav-logo">
-                <!-- LOGO COM CAMINHO ABSOLUTO -->
+                <!-- IMPORTANTE: width e height para evitar CLS -->
                 <img src="/assets/images/pontohub-logo.svg" 
                      alt="PontoHub" 
                      class="logo-img"
@@ -271,10 +287,9 @@
                 <li><a href="/pt-br/" class="nav-link" data-i18n="nav.home">Início</a></li>
                 <li><a href="/pt-br/servicos.html" class="nav-link" data-i18n="nav.services">Serviços</a></li>
                 <li><a href="/pt-br/sobre.html" class="nav-link" data-i18n="nav.about">Sobre</a></li>
-                <!-- ACTIVE NA PÁGINA PARCEIROS + data-i18n MANTIDO -->
                 <li><a href="/pt-br/parceiros.html" class="nav-link active" data-i18n="nav.partners">Parceiros</a></li>
-                <li><a href="/pt-br/portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
-                <li><a href="/pt-br/contato.html" class="nav-cta" data-i18n="nav.contact">Começar Projeto</a></li>
+                <li><a href="/pt-br/portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfólio</a></li>
+                <li><a href="/pt-br/contacto.html" class="nav-cta" data-i18n="nav.contact">Iniciar Projeto</a></li>
             </ul>
             <div class="mobile-toggle">
                 <span></span>
@@ -283,6 +298,7 @@
             </div>
         </div>
     </nav>
+
     <!-- Hero Section -->
     <section class="page-hero">
         <div class="hero-container">
@@ -290,12 +306,12 @@
                 <span class="hero-badge" data-i18n="partners.badge">Parceiros Tecnológicos</span>
                 <h1 class="hero-title">
                     <span data-i18n="partners.title">Tecnologias que</span> 
-                    <span class="text-gradient" data-i18n="partners.title.gradient">impulsionam inovação</span>
+                    <span class="text-gradient" data-i18n="partners.title.gradient">suportam as nossas soluções</span>
                 </h1>
-                <p class="hero-subtitle" data-i18n="partners.subtitle">
+                <!--<p class="hero-subtitle" data-i18n="partners.subtitle">
                     Trabalhamos com as principais plataformas e tecnologias do mercado 
                     para garantir soluções robustas e escaláveis.
-                </p>
+                </p>-->
             </div>
         </div>
     </section>
@@ -304,11 +320,11 @@
     <section class="tech-stack">
         <div class="section-header animate-in">
             <span class="section-label" data-i18n="tech.label">Stack Tecnológico</span>
-            <h2 class="section-title" data-i18n="tech.title">Dominamos as tecnologias do futuro</h2>
-            <p class="section-subtitle" data-i18n="tech.subtitle">
+            <h2 class="section-title" data-i18n="tech.title">Tecnologia certa para cada projeto</h2>
+            <!--<p class="section-subtitle" data-i18n="tech.subtitle">
                 Utilizamos as ferramentas mais avançadas para criar 
                 soluções robustas e escaláveis.
-            </p>
+            </p>-->
         </div>
         <div class="tech-grid">
             <div class="tech-category animate-in">
@@ -348,7 +364,7 @@
                     <div class="tech-icon">
                         <i class="fas fa-database"></i>
                     </div>
-                    <h3 class="tech-title">Database</h3>
+                    <h3 class="tech-title">Banco de Dados</h3>
                 </div>
                 <div class="tech-items">
                     <div class="tech-item">PostgreSQL</div>
@@ -378,7 +394,7 @@
                     <div class="tech-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3 class="tech-title">AI & ML</h3>
+                    <h3 class="tech-title">IA & ML</h3>
                 </div>
                 <div class="tech-items">
                     <div class="tech-item">TensorFlow</div>
@@ -393,7 +409,7 @@
                     <div class="tech-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="tech-title">Security</h3>
+                    <h3 class="tech-title">Segurança</h3>
                 </div>
                 <div class="tech-items">
                     <div class="tech-item">OAuth 2.0</div>
@@ -411,10 +427,10 @@
         <div class="section-header animate-in">
             <span class="section-label" data-i18n="enterprise.label">Soluções Enterprise</span>
             <h2 class="section-title" data-i18n="enterprise.title">Parceiros estratégicos de confiança</h2>
-            <p class="section-subtitle" data-i18n="enterprise.subtitle">
+            <!--<p class="section-subtitle" data-i18n="enterprise.subtitle">
                 Certificações e parcerias com as principais empresas de tecnologia 
                 garantem qualidade e suporte de classe mundial.
-            </p>
+            </p>-->
         </div>
         
         <div class="tech-logos">
@@ -525,11 +541,11 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
+    <!-- Certifications Section 
     <section class="certifications">
         <div class="section-header animate-in">
             <span class="section-label" data-i18n="certifications.label">Certificações</span>
-            <h2 class="section-title" data-i18n="certifications.title">Expertise reconhecida globalmente</h2>
+            <h2 class="section-title" data-i18n="certifications.title">Competência reconhecida globalmente</h2>
         </div>
         <div class="certifications-grid">
             <div class="certification-card animate-in">
@@ -561,19 +577,19 @@
                 <p>Information Security</p>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- CTA Section -->
     <section class="cta">
         <div class="cta-content animate-in">
-            <h2 class="cta-title" data-i18n="partners.cta.title">Pronto para implementar as melhores tecnologias?</h2>
+            <h2 class="cta-title" data-i18n="partners.cta.title">Pronto para implementar essas tecnologias no seu negócio?</h2>
             <p class="cta-subtitle" data-i18n="partners.cta.subtitle">
-                Nossa expertise com essas plataformas garante que seu projeto 
+                A nossa competência com estas plataformas garante que o seu projeto 
                 será desenvolvido com as melhores práticas do mercado.
             </p>
             <div class="cta-buttons">
                 <a href="/pt-br/servicos.html" class="cta-btn cta-primary">
-                    <i class="fas fa-tools"></i> <span data-i18n="partners.cta.services">Ver Nossos Serviços</span>
+                    <i class="fas fa-tools"></i> <span data-i18n="partners.cta.services">Ver Os Nossos Serviços</span>
                 </a>
                 <a href="/pt-br/portfolio.html" class="cta-btn cta-secondary">
                     <i class="fas fa-briefcase"></i> <span data-i18n="partners.cta.portfolio">Ver Casos de Sucesso</span>
@@ -583,7 +599,6 @@
     </section>
 
     <!-- Footer -->
-    <!-- Footer Atualizado -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
@@ -618,7 +633,7 @@
                             <i class="fas fa-chevron-right"></i> <span data-i18n="team.label">Nossa Equipe</span>
                         </a></li>
                         <li><a href="/pt-br/portfolio.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> <span data-i18n="nav.portfolio">Portfolio</span>
+                            <i class="fas fa-chevron-right"></i> <span data-i18n="nav.portfolio">Portfólio</span>
                         </a></li>
                         <li><a href="/pt-br/parceiros.html" class="footer-link">
                             <i class="fas fa-chevron-right"></i> <span data-i18n="nav.partners">Parceiros</span>
@@ -644,7 +659,7 @@
                 
                 <!-- Coluna 4: Contatos -->
                 <div class="footer-column footer-contact">
-                    <h3 data-i18n="footer.contact">Contatos</h3>
+                    <h3 data-i18n="footer.contact">Contactos</h3>
                     
                     <!-- Email -->
                     <div class="footer-contact-item">
@@ -708,21 +723,21 @@
         </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
+    <!-- Cookie Consent Banner PT-BR -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-container">
             <div class="cookie-content">
                 <div class="cookie-text">
                     <h3 class="cookie-title">🍪 <span data-i18n="cookie.title">Utilizamos Cookies</span></h3>
                     <p class="cookie-description" data-i18n="cookie.description">
-                        Utilizamos cookies para melhorar sua experiência de navegação, personalizar conteúdo e analisar nosso tráfego. 
-                        Ao clicar em "Aceitar Todos", você concorda com o uso de TODOS os cookies.
+                        Utilizamos cookies para melhorar a sua experiência de navegação, personalizar conteúdo e analisar o nosso tráfego. 
+                        Ao clicar em "Aceitar Todos", concorda com o uso de TODOS os cookies.
                     </p>
                     <a href="#" class="cookie-link" onclick="openCookiePolicy()" data-i18n="cookie.learnMore">Saber mais</a>
                 </div>
                 <div class="cookie-actions">
                     <button class="cookie-btn cookie-settings" onclick="openCookieSettings()">
-                        <i class="fas fa-cog"></i> <span data-i18n="cookie.settings">Configurações</span>
+                        <i class="fas fa-cog"></i> <span data-i18n="cookie.settings">Definições</span>
                     </button>
                     <button class="cookie-btn cookie-reject" onclick="rejectCookies()">
                         <span data-i18n="cookie.reject">Rejeitar</span>
@@ -735,19 +750,19 @@
         </div>
     </div>
 
-    <!-- Cookie Settings Modal -->
+    <!-- Cookie Settings Modal PT-BR -->
     <div id="cookieSettings" class="cookie-modal">
         <div class="modal-overlay" onclick="closeCookieSettings()"></div>
         <div class="modal-content">
             <div class="modal-header">
-                <h2 data-i18n="cookie.modal.title">Configurações de Cookies</h2>
+                <h2 data-i18n="cookie.modal.title">Definições de Cookies</h2>
                 <button class="modal-close" onclick="closeCookieSettings()">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="modal-body">
                 <p class="modal-intro" data-i18n="cookie.modal.intro">
-                    Utilize os controlos abaixo para personalizar suas preferências de cookies. 
+                    Utilize os controlos abaixo para personalizar as suas preferências de cookies. 
                     Alguns cookies são essenciais para o funcionamento do site e não podem ser desativados.
                 </p>
                 
@@ -772,7 +787,7 @@
                     <div class="category-header">
                         <div class="category-info">
                             <h3 data-i18n="cookie.analytics.title">Cookies de Análise</h3>
-                            <p data-i18n="cookie.analytics.desc">Nos ajudam a entender como os visitantes interagem com nosso site.</p>
+                            <p data-i18n="cookie.analytics.desc">Ajudam-nos a entender como os visitantes interagem com o nosso site.</p>
                         </div>
                         <div class="category-toggle">
                             <label class="toggle-switch">
@@ -788,7 +803,7 @@
                     <div class="category-header">
                         <div class="category-info">
                             <h3 data-i18n="cookie.marketing.title">Cookies de Marketing</h3>
-                            <p data-i18n="cookie.marketing.desc">Usados para fornecer anúncios relevantes e campanhas de marketing.</p>
+                            <p data-i18n="cookie.marketing.desc">Utilizados para fornecer anúncios relevantes e campanhas de marketing.</p>
                         </div>
                         <div class="category-toggle">
                             <label class="toggle-switch">
@@ -804,7 +819,7 @@
                     <div class="category-header">
                         <div class="category-info">
                             <h3 data-i18n="cookie.functional.title">Cookies Funcionais</h3>
-                            <p data-i18n="cookie.functional.desc">Permitem funcionalidades personalizadas e melhoram sua experiência.</p>
+                            <p data-i18n="cookie.functional.desc">Permitem funcionalidades personalizadas e melhoram a sua experiência.</p>
                         </div>
                         <div class="category-toggle">
                             <label class="toggle-switch">
@@ -840,52 +855,140 @@
     <script src="../assets/js/main.js?v=0.0.1"></script>
     <script src="../assets/js/parceiros.js?v=0.0.1"></script>
     <script src="/assets/js/cookie-manager.js?v=0.0.1"></script>
-    
+
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Parceiros Tecnológicos",
-        "description": "Tecnologias e plataformas que utilizamos para criar soluções inovadoras",
-        "publisher": {
-            "@type": "Organization",
-            "name": "PontoHub",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.pontohub.com/logo.png"
-            }
-        },
-        "mainEntity": {
-            "@type": "ItemList",
-            "itemListElement": [
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "AWS",
-                    "applicationCategory": "Cloud Platform"
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://www.pontohub.com/#organization",
+                "name": "PontoHub",
+                "alternateName": "Ponto Hub",
+                "url": "https://www.pontohub.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.pontohub.com/assets/images/pontohub-logo.svg",
+                    "width": 600,
+                    "height": 60,
+                    "encodingFormat": "image/svg+xml"
                 },
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "Azure",
-                    "applicationCategory": "Cloud Platform"
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://www.pontohub.com/images/og-image.jpg",
+                    "width": 1200,
+                    "height": 630
                 },
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "Google Cloud",
-                    "applicationCategory": "Cloud Platform"
+                "description": "Conectando ideias, transformando negócios. Líderes em transformação digital com soluções de software, IA, Cloud Computing e integração de sistemas.",
+                "foundingDate": "2018",
+                "founders": [
+                    {
+                        "@type": "Person",
+                        "name": "Thiago Antunes"
+                    }
+                ],
+                "address": [
+                    {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Lisboa",
+                        "addressCountry": "PT",
+                        "streetAddress": "Rua do Centro Cultural 5, 2º Piso, Sala 10"
+                    },
+                    {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Rio de Janeiro",
+                        "addressRegion": "RJ",
+                        "addressCountry": "BR",
+                        "streetAddress": "Estrada do Galeão 1261"
+                    }
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+351-963-487-687",
+                    "contactType": "customer service",
+                    "email": "info@pontohub.com",
+                    "availableLanguage": ["Portuguese", "English"],
+                    "areaServed": ["PT", "BR"]
                 },
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "SAP",
-                    "applicationCategory": "Enterprise Software"
-                },
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "Salesforce",
-                    "applicationCategory": "CRM Software"
+                "sameAs": [
+                    "https://www.linkedin.com/company/pontohub",
+                    "https://github.com/pontohub",
+                    "https://www.instagram.com/ponto.hub",
+                    "https://www.facebook.com/pontohub"
+                ],
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingCount": "47"
                 }
-            ]
-        }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://www.pontohub.com/#website",
+                "url": "https://www.pontohub.com",
+                "name": "PontoHub",
+                "description": "Transformação digital com soluções de software, IA e Cloud Computing",
+                "publisher": {
+                    "@id": "https://www.pontohub.com/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://www.pontohub.com/search?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                },
+                "inLanguage": ["pt-PT", "pt-BR", "en-GB"]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://www.pontohub.com/pt-br/parceiros/#webpage",
+                "url": "https://www.pontohub.com/pt-br/parceiros",
+                "name": "Parceiros | PontoHub - Parcerias Estratégicas",
+                "isPartOf": {
+                    "@id": "https://www.pontohub.com/#website"
+                },
+                "about": {
+                    "@id": "https://www.pontohub.com/#organization"
+                },
+                "datePublished": "2018-01-01",
+                "dateModified": "2025-01-01",
+                "description": "Conheça os parceiros tecnológicos da PontoHub. Colaboramos com líderes do setor para oferecer as melhores soluções aos nossos clientes.",
+                "breadcrumb": {
+                    "@id": "https://www.pontohub.com/pt-br/parceiros/#breadcrumb"
+                },
+                "inLanguage": "pt-BR",
+                "potentialAction": [
+                    {
+                        "@type": "ReadAction",
+                        "target": ["https://www.pontohub.com/pt-br/parceiros"]
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.pontohub.com/pt-br/parceiros/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Início",
+                        "item": "https://www.pontohub.com/pt-br/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Parceiros",
+                        "item": "https://www.pontohub.com/pt-br/parceiros"
+                    }
+                ]
+            }
+        ]
     }
     </script>
 </body>
+</html>

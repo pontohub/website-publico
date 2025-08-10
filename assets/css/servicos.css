@@ -298,125 +298,6 @@
     font-size: 0.95rem;
 }
 
-/* Contact Section */
-.contact-section {
-    padding: 120px 0;
-    background: var(--white);
-}
-
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.contact-form {
-    background: var(--gray-50);
-    padding: 3rem;
-    border-radius: 20px;
-    position: relative;
-    box-shadow: var(--shadow-lg);
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.form-group {
-    position: relative;
-}
-
-.form-group.full {
-    grid-column: span 2;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--dark-blue);
-}
-
-.form-input {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background: var(--white);
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-    color: var(--dark-blue);
-    transition: var(--transition-base);
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(11, 67, 135, 0.1);
-}
-
-textarea.form-input {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.form-select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23737373' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1.5rem center;
-    padding-right: 3rem;
-}
-
-.form-submit {
-    width: 100%;
-    padding: 1.25rem;
-    background: var(--primary);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transition-base);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-top: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.form-submit::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: var(--dark-blue);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-}
-
-.form-submit:hover::after {
-    width: 600px;
-    height: 600px;
-}
-
-.form-submit:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-xl);
-}
-
-.form-submit span {
-    position: relative;
-    z-index: 1;
-}
 
 /* Responsive Design */
 @media (max-width: 1200px) {
@@ -439,13 +320,6 @@ textarea.form-input {
         margin: 0 auto 2rem;
     }
 
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .form-group {
-        grid-column: span 1;
-    }
 }
 
 @media (max-width: 640px) {
@@ -457,7 +331,4 @@ textarea.form-input {
         grid-template-columns: 1fr;
     }
 
-    .contact-form {
-        padding: 2rem;
-    }
 }

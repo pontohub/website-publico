@@ -138,10 +138,26 @@
             z-index: 9999;
         }
         
+        /* FIX OVERLAY - ONLY THIS */
+        .tech-stack {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tech-partners {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-header {
+            position: relative;
+            z-index: 1;
+        }
+        
         /* Mobile */
         @media (max-width: 968px) {
             .navbar { height: 60px; }
-            .hero { 
+            .hero, .page-hero { 
                 margin-top: 60px; 
                 min-height: calc(100vh - 60px);
             }
@@ -170,8 +186,8 @@
     <!-- ========================================= -->
     <!-- 5. SEO META TAGS (PARTNERS EN-GB)        -->
     <!-- ========================================= -->
-    <meta name="description" content="PontoHub Partners - Technologies and platforms we use to create innovative solutions. AWS, Azure, Google Cloud, SAP, Salesforce and more.">
-    <meta name="keywords" content="technology partners, aws, azure, google cloud, sap, salesforce, technologies, platforms">
+    <meta name="description" content="Discover PontoHub's technology partners and stack: AWS, Azure, Google Cloud, SAP, Salesforce, AI, DevOps, Skyone, Mulesoft and much more.">
+    <meta name="keywords" content="technology partners, aws, azure, google cloud, sap, salesforce, mulesoft, n8n, skyone solutions, integrations, technologies, platforms">
     <meta name="author" content="PontoHub">
     <meta name="robots" content="index, follow">
     
@@ -187,8 +203,8 @@
     <!-- Open Graph (PARTNERS EN-GB) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pontohub.com/en-gb/partners">
-    <meta property="og:title" content="Technology Partners - PontoHub | Cutting-Edge Technologies">
-    <meta property="og:description" content="Partners and technologies we use to create innovative and scalable solutions.">
+    <meta property="og:title" content="PontoHub | Partners and Technologies that Drive Innovation">
+    <meta property="og:description" content="Discover PontoHub's technology partners and stack: AWS, Azure, Google Cloud, SAP, Salesforce, AI, DevOps, Skyone, Mulesoft and much more.">
     <meta property="og:image" content="https://www.pontohub.com/images/og-partners.jpg">
     
     <!-- Twitter -->
@@ -197,7 +213,7 @@
     <!-- ========================================= -->
     <!-- 6. TITLE (PARTNERS EN-GB)                -->
     <!-- ========================================= -->
-    <title>Technology Partners - PontoHub | Cutting-Edge Technologies</title>
+    <title>PontoHub | Partners and Technologies that Drive Innovation</title>
     
     <!-- ========================================= -->
     <!-- 7. OPTIMIZED FONTS (INTER ONLY)          -->
@@ -290,12 +306,12 @@
                 <span class="hero-badge" data-i18n="partners.badge">Technology Partners</span>
                 <h1 class="hero-title">
                     <span data-i18n="partners.title">Technologies that</span> 
-                    <span class="text-gradient" data-i18n="partners.title.gradient">drive innovation</span>
+                    <span class="text-gradient" data-i18n="partners.title.gradient">power our solutions</span>
                 </h1>
-                <p class="hero-subtitle" data-i18n="partners.subtitle">
+                <!--<p class="hero-subtitle" data-i18n="partners.subtitle">
                     We work with leading platforms and technologies to 
                     ensure robust and scalable solutions.
-                </p>
+                </p>-->
             </div>
         </div>
     </section>
@@ -304,11 +320,11 @@
     <section class="tech-stack">
         <div class="section-header animate-in">
             <span class="section-label" data-i18n="tech.label">Technology Stack</span>
-            <h2 class="section-title" data-i18n="tech.title">We master the technologies of the future</h2>
-            <p class="section-subtitle" data-i18n="tech.subtitle">
+            <h2 class="section-title" data-i18n="tech.title">The right technology for every project</h2>
+            <!--<p class="section-subtitle" data-i18n="tech.subtitle">
                 We use the most advanced tools to create 
                 robust and scalable solutions.
-            </p>
+            </p>-->
         </div>
         <div class="tech-grid">
             <div class="tech-category animate-in">
@@ -411,10 +427,10 @@
         <div class="section-header animate-in">
             <span class="section-label" data-i18n="enterprise.label">Enterprise Solutions</span>
             <h2 class="section-title" data-i18n="enterprise.title">Trusted strategic partners</h2>
-            <p class="section-subtitle" data-i18n="enterprise.subtitle">
+            <!--<p class="section-subtitle" data-i18n="enterprise.subtitle">
                 Certifications and partnerships with leading technology companies 
                 ensure world-class quality and support.
-            </p>
+            </p>-->
         </div>
         
         <div class="tech-logos">
@@ -525,7 +541,7 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
+    <!-- Certifications Section 
     <section class="certifications">
         <div class="section-header animate-in">
             <span class="section-label" data-i18n="certifications.label">Certifications</span>
@@ -561,12 +577,12 @@
                 <p>Information Security</p>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- CTA Section -->
     <section class="cta">
         <div class="cta-content animate-in">
-            <h2 class="cta-title" data-i18n="partners.cta.title">Ready to implement the best technologies?</h2>
+            <h2 class="cta-title" data-i18n="partners.cta.title">Ready to implement these technologies in your business?</h2>
             <p class="cta-subtitle" data-i18n="partners.cta.subtitle">
                 Our expertise with these platforms ensures your project 
                 will be developed with market best practices.
@@ -586,7 +602,8 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
-                <!-- Coluna 1: Serviços -->
+                
+                <!-- Column 1: Services -->
                 <div class="footer-column">
                     <h3 data-i18n="footer.services">Services</h3>
                     <ul class="footer-links">
@@ -604,7 +621,8 @@
                         </a></li>
                     </ul>
                 </div>
-                <!-- Coluna 2: Empresa -->
+                
+                <!-- Column 2: Company -->
                 <div class="footer-column">
                     <h3 data-i18n="footer.company">Company</h3>
                     <ul class="footer-links">
@@ -622,22 +640,24 @@
                         </a></li>
                     </ul>
                 </div>
-                <!-- Coluna 3: Legal -->
+                
+                <!-- Column 3: Legal -->
                 <div class="footer-column">
                     <h4>Legal</h4>
                     <ul class="footer-links">
                         <li><a href="/en-gb/privacy-policy.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> Política de Privacidade
+                            <i class="fas fa-chevron-right"></i> Privacy Policy
                         </a></li>
                         <li><a href="/en-gb/terms-conditions.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> Termos e Condições
+                            <i class="fas fa-chevron-right"></i> Terms & Conditions
                         </a></li>
                         <li><a href="/en-gb/cookies-policy.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> Política de Cookies
+                            <i class="fas fa-chevron-right"></i> Cookies Policy
                         </a></li>
                     </ul>
                 </div>
-                <!-- Coluna 4: Contatos -->
+                
+                <!-- Column 4: Contacts -->
                 <div class="footer-column footer-contact">
                     <h3 data-i18n="footer.contact">Contacts</h3>
                     
@@ -658,16 +678,16 @@
                         </div>
                     </div>
                     
-                    <!-- Localizações -->
+                    <!-- Locations -->
                     <div class="footer-contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <p><strong>Lisboa, Portugal</strong></p>
-                            <p><strong>Rio de Janeiro, Brasil</strong></p>
+                            <p><strong>Lisbon, Portugal</strong></p>
+                            <p><strong>Rio de Janeiro, Brazil</strong></p>
                         </div>
                     </div>
                     
-                    <!-- Redes Sociais -->
+                    <!-- Social Networks -->
                     <div class="footer-social">
     <a href="https://www.linkedin.com/company/pontohub" 
        target="_blank" 
@@ -694,8 +714,9 @@
         <i class="fab fa-facebook"></i>
     </a>-->
 </div>
-                </div>    
+                </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 PontoHub. <span data-i18n="footer.rights">All rights reserved. | Transforming the future, today.</span></p>
             </div>
@@ -823,7 +844,6 @@
         </div>
     </div>
 
-
     <!-- Scroll to Top Button -->
     <a href="#" class="scroll-top">
         <i class="fas fa-arrow-up"></i>
@@ -840,47 +860,135 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Technology Partners",
-        "description": "Technologies and platforms we use to create innovative solutions",
-        "publisher": {
-            "@type": "Organization",
-            "name": "PontoHub",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.pontohub.com/logo.png"
-            }
-        },
-        "mainEntity": {
-            "@type": "ItemList",
-            "itemListElement": [
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "AWS",
-                    "applicationCategory": "Cloud Platform"
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://www.pontohub.com/#organization",
+                "name": "PontoHub",
+                "alternateName": "Ponto Hub",
+                "url": "https://www.pontohub.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.pontohub.com/assets/images/pontohub-logo.svg",
+                    "width": 600,
+                    "height": 60,
+                    "encodingFormat": "image/svg+xml"
                 },
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "Azure",
-                    "applicationCategory": "Cloud Platform"
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://www.pontohub.com/images/og-image.jpg",
+                    "width": 1200,
+                    "height": 630
                 },
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "Google Cloud",
-                    "applicationCategory": "Cloud Platform"
+                "description": "Connecting ideas, transforming businesses. Leaders in digital transformation with software solutions, AI, Cloud Computing and systems integration.",
+                "foundingDate": "2018",
+                "founders": [
+                    {
+                        "@type": "Person",
+                        "name": "Thiago Antunes"
+                    }
+                ],
+                "address": [
+                    {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Lisbon",
+                        "addressCountry": "PT",
+                        "streetAddress": "Rua do Centro Cultural 5, 2º Piso, Sala 10"
+                    },
+                    {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Rio de Janeiro",
+                        "addressRegion": "RJ",
+                        "addressCountry": "BR",
+                        "streetAddress": "Estrada do Galeão 1261"
+                    }
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+351-963-487-687",
+                    "contactType": "customer service",
+                    "email": "info@pontohub.com",
+                    "availableLanguage": ["Portuguese", "English"],
+                    "areaServed": ["PT", "BR"]
                 },
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "SAP",
-                    "applicationCategory": "Enterprise Software"
-                },
-                {
-                    "@type": "SoftwareApplication",
-                    "name": "Salesforce",
-                    "applicationCategory": "CRM Software"
+                "sameAs": [
+                    "https://www.linkedin.com/company/pontohub",
+                    "https://github.com/pontohub",
+                    "https://www.instagram.com/ponto.hub",
+                    "https://www.facebook.com/pontohub"
+                ],
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingCount": "47"
                 }
-            ]
-        }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://www.pontohub.com/#website",
+                "url": "https://www.pontohub.com",
+                "name": "PontoHub",
+                "description": "Digital transformation with software solutions, AI and Cloud Computing",
+                "publisher": {
+                    "@id": "https://www.pontohub.com/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://www.pontohub.com/search?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                },
+                "inLanguage": ["pt-PT", "pt-BR", "en-GB"]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://www.pontohub.com/en-gb/partners/#webpage",
+                "url": "https://www.pontohub.com/en-gb/partners",
+                "name": "Partners | PontoHub - Strategic Partnerships",
+                "isPartOf": {
+                    "@id": "https://www.pontohub.com/#website"
+                },
+                "about": {
+                    "@id": "https://www.pontohub.com/#organization"
+                },
+                "datePublished": "2018-01-01",
+                "dateModified": "2025-01-01",
+                "description": "Discover PontoHub's technology partners. We collaborate with industry leaders to deliver the best solutions to our clients.",
+                "breadcrumb": {
+                    "@id": "https://www.pontohub.com/en-gb/partners/#breadcrumb"
+                },
+                "inLanguage": "en-GB",
+                "potentialAction": [
+                    {
+                        "@type": "ReadAction",
+                        "target": ["https://www.pontohub.com/en-gb/partners"]
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.pontohub.com/en-gb/partners/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.pontohub.com/en-gb/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Partners",
+                        "item": "https://www.pontohub.com/en-gb/partners"
+                    }
+                ]
+            }
+        ]
     }
     </script>
 </body>
+</html>

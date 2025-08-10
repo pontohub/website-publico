@@ -238,7 +238,7 @@
     <!-- Global CSS (estilos não-críticos) -->
     <link rel="preload" href="/assets/css/global.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2.0"></noscript>
-    
+
     <!-- CSS específico de Serviços -->
     <link rel="preload" href="/assets/css/servicos.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/servicos.css?v=2.0"></noscript>
@@ -330,7 +330,7 @@
                             <span>Blockchain Solutions</span>
                         </li>
                     </ul>
-                    <a href="#contact-form" class="service-link">
+                    <a href="/pt-pt/contacto.html#contact-form" class="service-link">
                         <span data-i18n="service.cta">Solicitar Orçamento →</span>
                     </a>
                 </div>
@@ -361,7 +361,7 @@
                             <span>Machine Learning</span>
                         </li>
                     </ul>
-                    <a href="#contact-form" class="service-link">
+                    <a href="/pt-pt/contacto.html#contact-form" class="service-link">
                         <span data-i18n="service.cta">Solicitar Orçamento →</span>
                     </a>
                 </div>
@@ -391,7 +391,7 @@
                             <span>Automatização RPA</span>
                         </li>
                     </ul>
-                    <a href="#contact-form" class="service-link">
+                    <a href="/pt-pt/contacto.html#contact-form" class="service-link">
                         <span data-i18n="service.cta">Solicitar Orçamento →</span>
                     </a>
                 </div>
@@ -421,7 +421,7 @@
                             <span>Event Streaming</span>
                         </li>
                     </ul>
-                    <a href="#contact-form" class="service-link">
+                    <a href="/pt-pt/contacto.html#contact-form" class="service-link">
                         <span data-i18n="service.cta">Solicitar Orçamento →</span>
                     </a>
                 </div>
@@ -451,7 +451,7 @@
                             <span>Serverless</span>
                         </li>
                     </ul>
-                    <a href="#contact-form" class="service-link">
+                    <a href="/pt-pt/contacto.html#contact-form" class="service-link">
                         <span data-i18n="service.cta">Solicitar Orçamento →</span>
                     </a>
                 </div>
@@ -482,7 +482,7 @@
                             <span>Serviços SOC</span>
                         </li>
                     </ul>
-                    <a href="#contact-form" class="service-link">
+                    <a href="/pt-pt/contacto.html#contact-form" class="service-link">
                         <span data-i18n="service.cta">Solicitar Orçamento →</span>
                     </a>
                 </div>
@@ -570,71 +570,6 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact-form" class="contact-section">
-        <div class="section-header animate-in">
-            <span class="section-label" data-i18n="services.contact.label">Fale connosco</span>
-            <h2 class="section-title" data-i18n="services.contact.title">Precisa de um orçamento?</h2>
-            <!--<p class="section-subtitle" data-i18n="services.contact.subtitle">
-                Conte-nos sobre o seu projeto e descubra como podemos ajudar 
-                a transformar as suas ideias em realidade.
-            </p>-->
-        </div>
-        <div class="contact-container">
-            <form class="contact-form animate-in" action="#" method="POST">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="name" class="form-label"><span data-i18n="form.name">Nome</span> *</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label"><span data-i18n="form.email">Email</span> *</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company" class="form-label" data-i18n="form.company">Empresa</label>
-                        <input type="text" id="company" name="company" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone" class="form-label" data-i18n="form.phone">Telefone</label>
-                        <input type="tel" id="phone" name="phone" class="form-input">
-                    </div>
-                    <div class="form-group full">
-                        <label for="service" class="form-label"><span data-i18n="form.service">Serviço de Interesse</span> *</label>
-                        <select id="service" name="service" class="form-input form-select" required>
-                            <option value="">Selecione um serviço</option>
-                            <option value="dev">Ponto Dev - Desenvolvimento</option>
-                            <option value="data">Ponto Data - Analytics</option>
-                            <option value="ai">IA Hub - Inteligência Artificial</option>
-                            <option value="integration">Hub Integration - Integração</option>
-                            <option value="cloud">Cloud Solutions</option>
-                            <option value="security">Cibersegurança</option>
-                            <option value="consulting">Consultoria Geral</option>
-                        </select>
-                    </div>
-                    <div class="form-group full">
-                        <label for="budget" class="form-label" data-i18n="form.budget">Orçamento Estimado</label>
-                        <select id="budget" name="budget" class="form-input form-select">
-                            <option value="">Selecione uma faixa</option>
-                            <option value="5k-10k">€5.000 - €10.000</option>
-                            <option value="10k-25k">€10.000 - €25.000</option>
-                            <option value="25k-50k">€25.000 - €50.000</option>
-                            <option value="50k-100k">€50.000 - €100.000</option>
-                            <option value="100k+">Acima de €100.000</option>
-                        </select>
-                    </div>
-                    <div class="form-group full">
-                        <label for="message" class="form-label"><span data-i18n="form.message">Detalhes do Projeto</span> *</label>
-                        <textarea id="message" name="message" class="form-input" rows="5" placeholder="Descreva o seu projeto, objetivos e desafios atuais..." required></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="form-submit">
-                    <span><i class="fas fa-paper-plane"></i> <span data-i18n="form.submit">Enviar Solicitação</span></span>
-                </button>
-            </form>
         </div>
     </section>
 
@@ -896,4 +831,139 @@
     <script src="../assets/js/main.js?v=0.0.1"></script>
     <script src="../assets/js/servicos.js?v=0.0.1"></script>
     <script src="/assets/js/cookie-manager.js?v=0.0.1"></script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://www.pontohub.com/#organization",
+                "name": "PontoHub",
+                "alternateName": "Ponto Hub",
+                "url": "https://www.pontohub.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.pontohub.com/assets/images/pontohub-logo.svg",
+                    "width": 600,
+                    "height": 60,
+                    "encodingFormat": "image/svg+xml"
+                },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://www.pontohub.com/images/og-image.jpg",
+                    "width": 1200,
+                    "height": 630
+                },
+                "description": "Conectando ideias, transformando negócios. Líderes em transformação digital com soluções de software, IA, Cloud Computing e integração de sistemas.",
+                "foundingDate": "2018",
+                "founders": [
+                    {
+                        "@type": "Person",
+                        "name": "Thiago Antunes"
+                    }
+                ],
+                "address": [
+                    {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Lisboa",
+                        "addressCountry": "PT",
+                        "streetAddress": "Rua do Centro Cultural 5, 2º Piso, Sala 10"
+                    },
+                    {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Rio de Janeiro",
+                        "addressRegion": "RJ",
+                        "addressCountry": "BR",
+                        "streetAddress": "Estrada do Galeão 1261"
+                    }
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+351-963-487-687",
+                    "contactType": "customer service",
+                    "email": "info@pontohub.com",
+                    "availableLanguage": ["Portuguese", "English"],
+                    "areaServed": ["PT", "BR"]
+                },
+                "sameAs": [
+                    "https://www.linkedin.com/company/pontohub",
+                    "https://github.com/pontohub",
+                    "https://www.instagram.com/ponto.hub",
+                    "https://www.facebook.com/pontohub"
+                ],
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "bestRating": "5",
+                    "worstRating": "1",
+                    "ratingCount": "47"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://www.pontohub.com/#website",
+                "url": "https://www.pontohub.com",
+                "name": "PontoHub",
+                "description": "Transformação digital com soluções de software, IA e Cloud Computing",
+                "publisher": {
+                    "@id": "https://www.pontohub.com/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://www.pontohub.com/search?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                },
+                "inLanguage": ["pt-PT", "pt-BR", "en-GB"]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://www.pontohub.com/pt-pt/servicos/#webpage",
+                "url": "https://www.pontohub.com/pt-pt/servicos",
+                "name": "Serviços | PontoHub - Soluções Tecnológicas Personalizadas",
+                "isPartOf": {
+                    "@id": "https://www.pontohub.com/#website"
+                },
+                "about": {
+                    "@id": "https://www.pontohub.com/#organization"
+                },
+                "datePublished": "2018-01-01",
+                "dateModified": "2025-01-01",
+                "description": "Serviços de desenvolvimento de software, inteligência artificial, cloud computing e transformação digital para empresas em Portugal.",
+                "breadcrumb": {
+                    "@id": "https://www.pontohub.com/pt-pt/servicos/#breadcrumb"
+                },
+                "inLanguage": "pt-PT",
+                "potentialAction": [
+                    {
+                        "@type": "ReadAction",
+                        "target": ["https://www.pontohub.com/pt-pt/servicos"]
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.pontohub.com/pt-pt/servicos/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Início",
+                        "item": "https://www.pontohub.com/pt-pt/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Serviços",
+                        "item": "https://www.pontohub.com/pt-pt/servicos"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 </body>

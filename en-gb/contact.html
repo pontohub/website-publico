@@ -91,7 +91,7 @@
         .mobile-toggle { display: none; }
         
         /* Hero */
-        .hero {
+        .hero, .page-hero {
             min-height: calc(100vh - 80px);
             margin-top: 80px;
             padding: 80px 0;
@@ -141,7 +141,7 @@
         /* Mobile */
         @media (max-width: 968px) {
             .navbar { height: 60px; }
-            .hero { 
+            .hero, .page-hero { 
                 margin-top: 60px; 
                 min-height: calc(100vh - 60px);
             }
@@ -170,8 +170,8 @@
     <!-- ========================================= -->
     <!-- 5. SEO META TAGS (CONTACT EN-GB)         -->
     <!-- ========================================= -->
-    <meta name="description" content="Contact PontoHub - Lisbon and São Paulo. Transform your ideas into innovative technology solutions. WhatsApp: +351 963 487 687">
-    <meta name="keywords" content="contact pontohub, quote, technology consulting, software development, lisbon, são paulo">
+    <meta name="description" content="Contact PontoHub. Software development, systems integration and automation for businesses. Response within 24h.">
+    <meta name="keywords" content="contact pontohub, quote, technology consulting, software development, lisbon, são paulo, spain">
     <meta name="author" content="PontoHub">
     <meta name="robots" content="index, follow">
     
@@ -187,8 +187,8 @@
     <!-- Open Graph (CONTACT EN-GB) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.pontohub.com/en-gb/contact">
-    <meta property="og:title" content="Contact - PontoHub | Get in Touch">
-    <meta property="og:description" content="Contact PontoHub. Transform your ideas into innovative technology solutions.">
+    <meta property="og:title" content="Contact PontoHub | Development, Integration and Automation">
+    <meta property="og:description" content="Contact PontoHub. Software development, systems integration and automation for businesses. Response within 24h.">
     <meta property="og:image" content="https://www.pontohub.com/images/og-contact.jpg">
     
     <!-- Twitter -->
@@ -197,7 +197,7 @@
     <!-- ========================================= -->
     <!-- 6. TITLE (CONTACT EN-GB)                 -->
     <!-- ========================================= -->
-    <title>Contact - PontoHub | Get in Touch</title>
+    <title>Contact PontoHub | Development, Integration and Automation</title>
     
     <!-- ========================================= -->
     <!-- 7. OPTIMIZED FONTS (INTER ONLY)          -->
@@ -292,10 +292,10 @@
                     <span data-i18n="contact.title">Let's create something</span> 
                     <span class="text-gradient" data-i18n="contact.title.gradient">extraordinary together</span>
                 </h1>
-                <p class="hero-subtitle" data-i18n="contact.subtitle">
+                <!--<p class="hero-subtitle" data-i18n="contact.subtitle">
                     Discover how our experts can boost your project 
                     and transform your ideas into reality.
-                </p>
+                </p>-->
             </div>
         </div>
     </section>
@@ -312,9 +312,9 @@
                         <h4 class="contact-title" data-i18n="contact.offices">Offices</h4>
                         <p class="contact-text">
                             <strong>Lisbon, Portugal</strong><br>
-                            Avenida da Liberdade<br><br>
-                            <strong>São Paulo, Brazil</strong><br>
-                            Vila Olímpia
+                            <br><br>
+                            <strong>Rio de Janeiro, Brazil</strong><br>
+                            
                         </p>
                     </div>
                     <div class="contact-card animate-in">
@@ -324,7 +324,8 @@
                         <h4 class="contact-title" data-i18n="contact.phone">Phone/WhatsApp</h4>
                         <p class="contact-text">
                             <a href="tel:+351963487687">+351 963 487 687</a><br>
-                            PT/BR Support<br>
+                            <a href="tel:+5521971276907">+55 21 97127 6907</a><br>
+                            <br>
                             Monday to Friday: 9am - 6pm
                         </p>
                     </div>
@@ -335,7 +336,7 @@
                         <h4 class="contact-title" data-i18n="contact.email">Email</h4>
                         <p class="contact-text">
                             <a href="mailto:info@pontohub.com">info@pontohub.com</a><br>
-                            <a href="mailto:contact@pontohub.com">contact@pontohub.com</a><br>
+                            <a href="mailto:support@pontohub.com">support@pontohub.com</a><br>
                             Response within 24h
                         </p>
                     </div>
@@ -346,8 +347,8 @@
                         <h4 class="contact-title" data-i18n="contact.social">Social Media</h4>
                         <p class="contact-text">
                             <a href="#" target="_blank">LinkedIn</a><br>
-                            <a href="#" target="_blank">GitHub</a><br>
-                            <a href="#" target="_blank">Instagram</a>
+                            <!--<a href="#" target="_blank">GitHub</a><br>
+                            <a href="#" target="_blank">Instagram</a>-->
                         </p>
                     </div>
                 </div>
@@ -364,8 +365,12 @@
                     </a>
                 </div>
             </div>
+            
 
-            <form class="contact-form animate-in" action="#" method="POST">
+
+            <!-- THIS IS THE COMPLETE FORM - REPLACE YOUR WITH THIS -->
+
+            <form class="contact-form animate-in" id="contact-form">
                 <h3 class="form-title" data-i18n="contact.form.title">Request a Quote</h3>
                 <p class="form-subtitle" data-i18n="contact.form.subtitle">Fill in the form and we'll get back to you within 24 hours.</p>
                 
@@ -375,7 +380,7 @@
                         <input type="text" id="name" name="name" class="form-input" required>
                     </div>
                     <div class="form-group">
-                        <label for="email" class="form-label"><span data-i18n="form.email">Corporate Email</span> *</label>
+                        <label for="email" class="form-label"><span data-i18n="form.email">Email</span> *</label>
                         <input type="email" id="email" name="email" class="form-input" required>
                     </div>
                     <div class="form-group">
@@ -392,7 +397,6 @@
                             <option value="">Select country</option>
                             <option value="brazil">Brazil</option>
                             <option value="portugal">Portugal</option>
-                            <option value="uk">United Kingdom</option>
                             <option value="others">Others</option>
                         </select>
                     </div>
@@ -413,11 +417,11 @@
                         <label for="budget" class="form-label" data-i18n="form.budget">Estimated Budget</label>
                         <select id="budget" name="budget" class="form-input form-select">
                             <option value="">Select a range</option>
-                            <option value="5k-10k">€5,000 - €10,000</option>
-                            <option value="10k-25k">€10,000 - €25,000</option>
-                            <option value="25k-50k">€25,000 - €50,000</option>
-                            <option value="50k-100k">€50,000 - €100,000</option>
-                            <option value="100k+">Above €100,000</option>
+                            <option value="5k-10k">£5,000 - £10,000</option>
+                            <option value="10k-25k">£10,000 - £25,000</option>
+                            <option value="25k-50k">£25,000 - £50,000</option>
+                            <option value="50k-100k">£50,000 - £100,000</option>
+                            <option value="100k+">Above £100,000</option>
                             <option value="consultancy">I need consultancy</option>
                         </select>
                     </div>
@@ -450,7 +454,7 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section 
     <section class="faq">
         <div class="section-header animate-in">
             <span class="section-label">FAQ</span>
@@ -505,14 +509,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- Map Section -->
     <section class="map-section">
         <div class="map-container">
             <div class="map-overlay">
                 <h3>Find Us</h3>
-                <p>Lisbon, Portugal | São Paulo, Brazil</p>
+                <p>Lisbon, Portugal | Rio de Janeiro, Brazil</p>
             </div>
             <!-- Placeholder for real map -->
             <div class="map-placeholder">
@@ -525,7 +529,8 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
-                <!-- Coluna 1: Serviços -->
+                
+                <!-- Column 1: Services -->
                 <div class="footer-column">
                     <h3 data-i18n="footer.services">Services</h3>
                     <ul class="footer-links">
@@ -543,7 +548,8 @@
                         </a></li>
                     </ul>
                 </div>
-                <!-- Coluna 2: Empresa -->
+                
+                <!-- Column 2: Company -->
                 <div class="footer-column">
                     <h3 data-i18n="footer.company">Company</h3>
                     <ul class="footer-links">
@@ -561,22 +567,24 @@
                         </a></li>
                     </ul>
                 </div>
-                <!-- Coluna 3: Legal -->
+                
+                <!-- Column 3: Legal -->
                 <div class="footer-column">
                     <h4>Legal</h4>
                     <ul class="footer-links">
                         <li><a href="/en-gb/privacy-policy.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> Política de Privacidade
+                            <i class="fas fa-chevron-right"></i> Privacy Policy
                         </a></li>
                         <li><a href="/en-gb/terms-conditions.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> Termos e Condições
+                            <i class="fas fa-chevron-right"></i> Terms and Conditions
                         </a></li>
                         <li><a href="/en-gb/cookies-policy.html" class="footer-link">
-                            <i class="fas fa-chevron-right"></i> Política de Cookies
+                            <i class="fas fa-chevron-right"></i> Cookies Policy
                         </a></li>
                     </ul>
                 </div>
-                <!-- Coluna 4: Contatos -->
+                
+                <!-- Column 4: Contacts -->
                 <div class="footer-column footer-contact">
                     <h3 data-i18n="footer.contact">Contacts</h3>
                     
@@ -597,16 +605,17 @@
                         </div>
                     </div>
                     
-                    <!-- Localizações -->
+                    
+                    <!-- Locations -->
                     <div class="footer-contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <p><strong>Lisboa, Portugal</strong></p>
-                            <p><strong>Rio de Janeiro, Brasil</strong></p>
+                            <p><strong>Lisbon, Portugal</strong></p>
+                            <p><strong>Rio de Janeiro, Brazil</strong></p>
                         </div>
                     </div>
                     
-                    <!-- Redes Sociais -->
+                    <!-- Social Networks -->
                     <div class="footer-social">
     <a href="https://www.linkedin.com/company/pontohub" 
        target="_blank" 
@@ -633,8 +642,9 @@
         <i class="fab fa-facebook"></i>
     </a>-->
 </div>
-                </div>    
+                </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 PontoHub. <span data-i18n="footer.rights">All rights reserved. | Transforming the future, today.</span></p>
             </div>
@@ -773,23 +783,38 @@
     <script src="../assets/js/main.js?v=0.0.1"></script>
     <script src="../assets/js/contato.js?v=0.0.1"></script>
     <script src="/assets/js/cookie-manager.js?v=0.0.1"></script>
-    
+
     <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "mainEntity": {
+     
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
             "@type": "Organization",
+            "@id": "https://www.pontohub.com/#organization",
             "name": "PontoHub",
+            "alternateName": "Ponto Hub",
             "url": "https://www.pontohub.com",
-            "contactPoint": [
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.pontohub.com/assets/images/pontohub-logo.svg",
+                "width": 600,
+                "height": 60,
+                "encodingFormat": "image/svg+xml"
+            },
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://www.pontohub.com/images/og-image.jpg",
+                "width": 1200,
+                "height": 630
+            },
+            "description": "Connecting ideas, transforming businesses. Digital transformation leaders with software solutions, AI, Cloud Computing and systems integration.",
+            "foundingDate": "2018",
+            "founders": [
                 {
-                    "@type": "ContactPoint",
-                    "telephone": "+351-963-487-687",
-                    "contactType": "customer service",
-                    "areaServed": ["PT", "BR"],
-                    "availableLanguage": ["Portuguese", "English"]
+                    "@type": "Person",
+                    "name": "Thiago Antunes"
                 }
             ],
             "address": [
@@ -797,17 +822,103 @@
                     "@type": "PostalAddress",
                     "addressLocality": "Lisbon",
                     "addressCountry": "PT",
-                    "streetAddress": "Avenida da Liberdade"
+                    "streetAddress": "Rua do Centro Cultural 5, 2º Piso, Sala 10"
                 },
                 {
                     "@type": "PostalAddress",
-                    "addressLocality": "São Paulo",
-                    "addressRegion": "SP",
+                    "addressLocality": "Rio de Janeiro",
+                    "addressRegion": "RJ",
                     "addressCountry": "BR",
-                    "streetAddress": "Vila Olímpia"
+                    "streetAddress": "Estrada do Galeão 1261"
+                }
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+351-963-487-687",
+                "contactType": "customer service",
+                "email": "info@pontohub.com",
+                "availableLanguage": ["Portuguese", "English"],
+                "areaServed": ["PT", "BR", "GB"]
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/pontohub",
+                "https://github.com/pontohub",
+                "https://www.instagram.com/ponto.hub",
+                "https://www.facebook.com/pontohub"
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "47"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.pontohub.com/#website",
+            "url": "https://www.pontohub.com",
+            "name": "PontoHub",
+            "description": "Digital transformation with software solutions, AI and Cloud Computing",
+            "publisher": {
+                "@id": "https://www.pontohub.com/#organization"
+            },
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://www.pontohub.com/search?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+            },
+            "inLanguage": ["pt-PT", "pt-BR", "en-GB"]
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://www.pontohub.com/en-gb/contact/#webpage",
+            "url": "https://www.pontohub.com/en-gb/contact",
+            "name": "Contact | PontoHub - Get in Touch",
+            "isPartOf": {
+                "@id": "https://www.pontohub.com/#website"
+            },
+            "about": {
+                "@id": "https://www.pontohub.com/#organization"
+            },
+            "datePublished": "2018-01-01",
+            "dateModified": "2025-01-01",
+            "description": "Contact PontoHub. We are ready to help with your business's digital transformation.",
+            "breadcrumb": {
+                "@id": "https://www.pontohub.com/en-gb/contact/#breadcrumb"
+            },
+            "inLanguage": "en-GB",
+            "potentialAction": [
+                {
+                    "@type": "ReadAction",
+                    "target": ["https://www.pontohub.com/en-gb/contact"]
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.pontohub.com/en-gb/contact/#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.pontohub.com/en-gb/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Contact",
+                    "item": "https://www.pontohub.com/en-gb/contact"
                 }
             ]
         }
-    }
-    </script>
+    ]
+}
+</script>
+
 </body>
+</html>
