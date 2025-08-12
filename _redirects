@@ -9,21 +9,19 @@
 # Redirecionamentos de URLs antigas (se tiver)
 # /old-page  /new-page  301
 
-/servicos/testimonials /pt-br/servicos.html 301
-/servicos/single-service /pt-br/servicos.html 301
-/servicos /pt-br/servicos.html 301
+/servicos/testimonials    /pt-br/servicos.html    301
+/servicos/single-service    /pt-br/servicos.html    301
+/servicos/desenvolvimento-de-software    /pt-br/servicos.html    301
+/servicos/integracao-de-dados    /pt-br/servicos.html    301
+/servicos    /pt-br/servicos.html    301
 
-/about/contact /pt-br/contato.html 301
+/about/contact    /pt-br/contato.html    301
 
+/politica-de-cookies    /pt-br/politica-cookies.html    301
+/politica-de-privacidade    /pt-br/politica-privacidade.html    301
+/termos-de-servico    /pt-br/termos-condicoes.html    301
 
-
-/politica-de-cookies /pt-br/politica-cookies.html 301
-/politica-de-privacidade /pt-br/politica-privacidade.html 301
-/termos-de-servico/ /pt-br/termos-condicoes.html 301
-/servicos/desenvolvimento-de-software /pt-br/servicos.html 301
-/servicos/integracao-de-dados /pt-br/servicos.html 301
-
-/case-studies /pt-br/portfolio.html 301
-/case-studies/automatic-ai-model /pt-br/portfolio.html 301
-/case-studies/language-processing-ai /pt-br/portfolio.html 301
+/case-studies/automatic-ai-model    /pt-br/portfolio.html    301
+/case-studies/language-processing-ai    /pt-br/portfolio.html    301
+/case-studies    /pt-br/portfolio.html    301
 
